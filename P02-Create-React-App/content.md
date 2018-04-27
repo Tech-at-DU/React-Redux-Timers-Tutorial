@@ -5,8 +5,8 @@ slug: react-redux-timers-create-react-app
 
 # Create the boilerplate React App
 
-The first step is to create a boiler plate react app. React provides a command line 
-tool: 'Create react App' that will do this for you.
+The first step is to create a boiler plate react app. React provides 
+a command line tool: 'Create react App' that will do this for you.
 
 Follow the instructions [here](https://github.com/facebook/create-react-app).
 
@@ -18,7 +18,8 @@ cd tmrz-app
 npm start
 ```
 
-The first command above may take a few seconds to install all of file dependancies. 
+The first command above may take a few seconds to install all of file 
+dependancies. 
 
 The last command may take a few seconds to start the app for the first time. 
 
@@ -29,8 +30,8 @@ When the app is running it should open in a browser and look like this:
 The project is now running on `localhost:3000`. This local server is 
 for development. 
 
-Editing files in the project should trigger the local server to update. In this
-way you can see the latest changes immediately in the browser. 
+Editing files in the project should trigger the local server to update. 
+In this way you can see the latest changes immediately in the browser. 
 
 ## Tour the React App source code
 

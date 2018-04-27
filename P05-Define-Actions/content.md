@@ -5,8 +5,7 @@ slug: react-redux-defining-actions
 
 # Defining Actions
 
-Your app needs to manage data. The data will stored with Redux 
-as part of the store. The Flux pattern and Redux require that 
+The Flux pattern and Redux require that 
 you define actions that describe how data can be modified.
 
 **Data can only be modifed through actions.**
@@ -14,7 +13,7 @@ you define actions that describe how data can be modified.
 For this project you will start by defining the actions before 
 making the app! 
  
-You will need to do the following things with the store in the app. 
+The app needs to do the following things. 
  
 - Create a new timer
 - Reset a timer 
@@ -22,29 +21,29 @@ You will need to do the following things with the store in the app.
 - Start a timer 
 - Stop a timer 
 - Toggle a timer 
-- Select a timer 
- 
-There may be other actions but these will all you to 
+- Select a timer
 
-Create new timers. Creating a timer will add a new timer object to 
-an array of timer objects held by the store. 
+**NEW_TIMER** - Creating a timer will add a new timer 
+object to an array of timer objects held by the store. 
 
-Reset a timer to 0. This action will require the index of that timer. 
+**RESET_TIMER** - Sets the time of a timer to 0. This requires 
+the id or index of a timer. 
 
-Delete a timer. Removes a timer from the array of timers in the 
+**DELETE_TIMER** - Removes a timer from the array of timers in the 
 store. This will require the index of the timer. 
 
-Start a timer. This action starts a timer running, and requires the 
-index of the timer to start. 
+**START_TIMER** - This action starts a timer running, and 
+requires the index of the timer to start. 
 
-Stop a timer. Stops a timer at the current time. This requires 
+**STOP_TIMER** - Stops a timer at the current time. This requires 
 the index of the timer. 
 
-Toggle timer, starts or stops a timer. This requires the index of 
-the timer. 
+**TOGGLE_TIMER** - Starts or stops a timer. This requires the 
+index of the timer. 
 
-Select timer, selects a timer. Selecting a timer will display 
-details about that timer. This requires the index of the timer. 
+**SELECT_TIMER** - Selects a timer. Selecting a timer will 
+display details about that timer. This requires the index 
+of the timer. 
 
 Each action should be defined as a `const` with string value.  
 
@@ -54,6 +53,19 @@ You will also need to define some action creators. One for each
 action. An action creator is a function that returns an object 
 with a type, and a payload when a value needs to accompany the
 action. 
+
+For example the SELECT_TIMER action creator might look like this: 
+
+```
+export const selectTimer = (index) => {
+  return {
+    type: SELECT_TIMER,
+    payload: { index }
+  }
+}
+```
+
+
 
 ## Challenges 
 

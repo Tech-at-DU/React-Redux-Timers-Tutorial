@@ -6,17 +6,16 @@ slug: react-redux-create-new-timers
 # Create new Timers
 
 So far you have been working on getting Redux and React up and 
-running and now work has gone into the app. Now it's time to 
-get the app working. 
+running and no work has gone into components. Now it's time to 
+get the components working. 
 
 With actions and reducers in place you can now create 
 containers/components that display state from the store and 
 send actions to update the store. 
 
-Create a component that displays a list of Timers. At this
-stage it won't display anything, you will have to make 
-a component that creates new timers before there is anything 
-to display. 
+## Show a list of timers
+
+You need to create two components. 
 
 **Displaying Components**
 
@@ -28,22 +27,18 @@ time, and start/stop button.
 The new timer component should have field (controlled component)
 to input a name and a button to save the timer. 
 
-## A closer look at Redux state 
-
-Redux relies on changes to state. What constitutes a changes in state? 
-
-[Object Equivalency](https://repl.it/@MitchellHudson/Object-Equivalence-setState)
+Start with the new Timer Component. Keep in mind that we 
+won't see timers until the Timer list component is created. 
 
 ## Challenges 
 
 **New Timer Component/Container**
 
 Create a component with an input and a button. This component 
-shuold use the controlled conponent pattern to implement to 
-connect the value in the input to state.
+shuold use the controlled conponent pattern.
 
-It should also use 'mapDispatchToProps' to connect the 'newTimer'
-action creator with this component. Here is a stub for the 
+Use 'mapDispatchToProps' to connect the 'newTimer'
+action creator to this component. Here is a stub for the 
 component: 
 
 ```JSX

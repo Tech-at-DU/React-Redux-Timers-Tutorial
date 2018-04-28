@@ -9,6 +9,16 @@ The list of timers will display all of the timers you have created.
 Each timer displayed in the list will display the name, time, and  
 a button to start or stop that timer. 
 
+## Timer List Component 
+
+The Timer list should display a list of timers in the store. 
+The start/stop button will send messages to the dispatcher. 
+
+To access the redux store it will need to be a container/component.
+
+This component will use both mapStateToProps and 
+mapDipatchToProps. 
+
 ## mapStateToProps
 
 Create a new component: 'src/list-timers.js'. 

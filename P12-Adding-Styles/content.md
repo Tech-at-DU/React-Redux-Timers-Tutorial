@@ -14,6 +14,9 @@ Choose one of the strategies from previous tutorial:
 - Local Stylesheet import
 - Inline Styles 
 
+The rest of this section will be agnostic to the 
+method you choose. 
+
 ## Challenges 
 
 Choose a system you will use ot add styles to this 

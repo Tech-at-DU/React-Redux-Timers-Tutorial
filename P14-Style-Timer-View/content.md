@@ -149,14 +149,13 @@ modify it to something like:
 className={`timer-view__button timer-view__button--${buttonClass}`}
 ```
 
-
-
 ## Challenges 
 
-
+Make the styles your own. These are pretty simple. You 
+can do more and improve the appearance. 
 
 ## Resources 
 
-- 
+- https://www.w3schools.com/css/css3_flexbox.asp
 
 

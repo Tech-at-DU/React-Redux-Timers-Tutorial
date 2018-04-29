@@ -1,6 +1,6 @@
 ---
-title: "React Redux Defining Actions"
-slug: react-redux-defining-actions
+title: "React Redux Timers - Defining Actions"
+slug: react-redux-timers-defining-actions
 ---
 
 # Defining Actions

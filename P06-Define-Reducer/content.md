@@ -1,6 +1,6 @@
 ---
-title: "React Redux Define Reducer"
-slug: react-redux-define-reducer
+title: "React Redux Timers - Define Reducer"
+slug: react-redux-timers-define-reducer
 ---
 
 # Define Reducer

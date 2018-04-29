@@ -1,6 +1,6 @@
 ---
-title: "React Redux List Timers"
-slug: react-redux-list-timers
+title: "React Redux Timers - List Timers"
+slug: react-redux-timers-list-timers
 ---
 
 # List Timers
@@ -118,9 +118,9 @@ add styles, possibly some more markup, the time will need to be formatted,
 and the button will require some logic and a click handler. 
 
 With these required additions this component would bloat and become 
-far less managable. In addition there would be a lot of logic, like 
-formatting time, that is not core goal of this component, which is 
-displaying a list of timers. 
+far less managable. In addition there would be a lot of logic, for 
+things like formatting time, that is not core goal of this component, 
+which is displaying a list of timers. 
 
 ## Timer View Component
 
@@ -163,7 +163,7 @@ const mapDispatchToProps = () => {
 export default connect(mapStateToProps, mapDispatchToProps())(TimerView)
 ```
 
-From here the render method in 'ListTimers' can be simplified to 
+From here the render method in 'src/ListTimers.js' can be simplified to 
 
 ```JSX
 render() {
@@ -185,7 +185,13 @@ You will need to import 'TimerView' at the top of 'ListTimers'
 
 ## Challenges 
 
+Add the `TimerList` and `TimerView` components. Implement these
+and get them to display your list of timers. 
 
+At this stage the Time should display the number of milliseconds 
+that the timer has been running. Format this into something 
+human readable. You can divide by 1000 to seconds, divide seconds
+by 60 to get minutes etc. 
 
 ## Resources 
 

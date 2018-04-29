@@ -1,6 +1,6 @@
 ---
-title: "React Redux Timer Object"
-slug: react-redux-timer-object
+title: "React Redux Timers - Timer Object"
+slug: react-redux-timers-timer-object
 ---
 
 # Defining the Timer Object

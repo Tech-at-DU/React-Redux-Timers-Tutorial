@@ -20,7 +20,7 @@ method you choose.
 ## Challenges 
 
 Choose a system you will use ot add styles to this 
-project. 
+project.
 
 ## Resources 
 

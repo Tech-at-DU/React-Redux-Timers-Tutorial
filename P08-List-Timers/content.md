@@ -5,23 +5,23 @@ slug: react-redux-timers-list-timers
 
 # List Timers
 
-The list of timers will display all of the timers you have created. 
+The list of timers will display all of the timers you have created.
 Each timer displayed in the list will display the name, time, and  
-a button to start or stop that timer. 
+a button to start or stop that timer.
 
-## Timer List Component 
+## Timer List Component
 
-The Timer list should display a list of timers in the store. 
-The start/stop button will send messages to the dispatcher. 
+The Timer list should display a list of timers in the store.
+The start/stop button will send messages to the dispatcher.
 
 To access the redux store it will need to be a container/component.
 
-This component will use both mapStateToProps and 
-mapDipatchToProps. 
+This component will use both mapStateToProps and
+mapDispatchToProps. 
 
 ## mapStateToProps
 
-Create a new component: 'src/list-timers.js'. 
+Create a new component: 'src/list-timers.js'.
 
 ```JSX
 import React, { Component } from 'react'
@@ -54,36 +54,36 @@ const mapDispatchToProps = () => {
 export default connect(mapStateToProps, mapDispatchToProps())(ListTimers)
 ```
 
-This implementation doesn't render the timers. It does set up the basic 
-elements required for container/component to interface with Redux. 
+This implementation doesn't render the timers. It does set up the basic
+elements required for container/component to interface with Redux.
 
-The array of timers and selectTimer action are passed to the component 
-via props through the 'mapStateToProps' and 'mapDispatchToProps' functions. 
+The array of timers and selectTimer action are passed to the component
+via props through the 'mapStateToProps' and 'mapDispatchToProps' functions.
 
-## Component Architecture 
+## Component Architecture
 
-The Component Architecture in React is very flexible. Use it to 
-your advantage in all situations. Use it to: 
+The Component Architecture in React is very flexible. Use it to
+your advantage in all situations. Use it to:
 
-Break pieces of larger components into smaller subcomponents. Using 
-mulitple components makes each component smaller and easier to 
-understand. 
+Break pieces of larger components into smaller subcomponents. Using
+mulitple components makes each component smaller and easier to
+understand.
 
-Make components from elements that will be re-used in different contexts. 
-Breaking things into more smaller components allows those components to 
-be re-used. 
+Make components from elements that will be re-used in different contexts.
+Breaking things into more smaller components allows those components to
+be re-used.
 
-Use Components to create logical organization. Breaking elements into 
-components gives your work a greater level of organization. 
+Use Components to create logical organization. Breaking elements into
+components gives your work a greater level of organization.
 
-Use components to offload display logic. Use components to handle 
-tedious display logic like conversion of dates and times. 
+Use components to offload display logic. Use components to handle
+tedious display logic like conversion of dates and times.
 
 ### The Timer list
 
 The timer list could be implemented as a single component. This
-simple approach works but doesn't use React's Component 
-architecture to your advantage. 
+simple approach works but doesn't use React's Component
+architecture to your advantage.
 
 ```JSX
 render() {
@@ -103,7 +103,7 @@ render() {
   }
 ```
 
-Here the render method maps `this.props.timers` to: 
+Here the render method maps `this.props.timers` to:
 
 ```JSX
 <div>
@@ -113,19 +113,19 @@ Here the render method maps `this.props.timers` to:
 </div>
 ```
 
-This is simple but to make it completely functional you will have to 
-add styles, possibly some more markup, the time will need to be formatted, 
-and the button will require some logic and a click handler. 
+This is simple but to make it completely functional you will have to
+add styles, possibly some more markup, the time will need to be formatted,
+and the button will require some logic and a click handler.
 
-With these required additions this component would bloat and become 
-far less managable. In addition there would be a lot of logic, for 
-things like formatting time, that is not core goal of this component, 
-which is displaying a list of timers. 
+With these required additions this component would bloat and become
+far less managable. In addition there would be a lot of logic, for
+things like formatting time, that is not core goal of this component,
+which is displaying a list of timers.
 
 ## Timer View Component
 
-A better approach is to create a component that is responsible for displaying 
-a single timer. 
+A better approach is to create a component that is responsible for displaying
+a single timer.
 
 Create a file: 'src/timer-view.js'
 
@@ -163,7 +163,7 @@ const mapDispatchToProps = () => {
 export default connect(mapStateToProps, mapDispatchToProps())(TimerView)
 ```
 
-From here the render method in 'src/ListTimers.js' can be simplified to 
+From here the render method in 'src/ListTimers.js' can be simplified to
 
 ```JSX
 render() {
@@ -175,27 +175,24 @@ render() {
 }
 ```
 
-Notice: 'TimerView' takes a 'Timer' object as a prop: `timer={timer}`. The name 
-and time properties are accessed as: `this.props.timer.name` and 
-`this.props.timer.time` within 'TimerView'. 
+Notice: 'TimerView' takes a 'Timer' object as a prop: `timer={timer}`. The name
+and time properties are accessed as: `this.props.timer.name` and
+`this.props.timer.time` within 'TimerView'.
 
 You will need to import 'TimerView' at the top of 'ListTimers'
 
 `import TimerView from './timer-view'`
 
-## Challenges 
+## Challenges
 
 Add the `TimerList` and `TimerView` components. Implement these
-and get them to display your list of timers. 
+and get them to display your list of timers.
 
-At this stage the Time should display the number of milliseconds 
-that the timer has been running. Format this into something 
+At this stage the Time should display the number of milliseconds
+that the timer has been running. Format this into something
 human readable. You can divide by 1000 to seconds, divide seconds
-by 60 to get minutes etc. 
+by 60 to get minutes etc.
 
-## Resources 
+## Resources
 
-- 
-
-
-
+-

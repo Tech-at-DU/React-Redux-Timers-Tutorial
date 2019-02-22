@@ -3,71 +3,54 @@ title: "React Redux Timers - Timer Object"
 slug: react-redux-timers-timer-object
 ---
 
-# Defining the Timer Object
+## Defining the Timer Object
 
-The app will create and store Objects that define a timer.
-Timer objects will have properties that define the timer.
-These will be:
+The app will create and store Objects that define a timer. Timer objects will have the following properties that will define it:
 
-- name: String - the name of the timer
-- time: Number - the time in milliseconds
-- isRunning: Boolean - tracks whether the timer is running or paused
+- **name:** String - the name of the timer
+- **time:** Number - the time in milliseconds
+- **isRunning:** Boolean - tracks whether the timer is running or paused
 
-You can add more properties to expand the functionality of the app.
-For example you might have billable, and rate if the app was used
-for business.
+You can add more properties to expand the functionality of the app. For example you might have `billable`, and rate if the app was used for business.
 
-JavaScript only has one Object type. It has many ways to create
-objects. For this tutorial I'm going to suggest using the class
-syntax. This will follow the same coding style used for creating
-React components.
+JavaScript only has one `Object` type. It has many ways to create objects. For this tutorial we will be using the class syntax. This will follow the same coding style used for creating React components.
 
-## Creating Classes
+# Creating Classes
 
-Define a class the `class` keyword. The following example
-creates a class named Book. Class names by convention
-always start with an uppercase letter.
+You can define a class using the `class` keyword. *Class names by convention
+always start with an uppercase letter.* You can initialize the properties of a class in it's constructor function.
 
-```
-class Book {
-
-}
-```
-
-Initalize the properties of class in it's constructor
-function.
-
-```
-class Book {
+> [action]
+>
+> In your `src` folder, create a `Timer.js` file and write the `Timer` class with the following properties:
+>
+```js
+class Timer {
+  // The name property is passed into the constructor and the class is initialized.
   constructor(name) {
     this.name = name;
-    this.rating = 0;
-    this.isRead = false;
+    this.time = 0;
+    this.isRunning = false;
   }
 }
 ```
 
-The `Book` class defines three properties.
+Below is an example on how to create an instance of `Timer`:
 
-The `name` property is passed into the constructor and
-the class is initialized.
-
-Create an instance of Book like this:
-
+```js
+var myTimer = new Timer('Workout');
 ```
-var myBook = new Book('War and Peace');
-```
-
-## Challenges
-
-Define a class 'Timer'.
-
-The Timer class should define the following properties:
-
-- name: A String, this is the name given to a timer
-- time: A Number, this holds how long the timer has been running
-- isRunning: A Boolean, this determines whether a timer is running or not
 
 ## Resources
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+
+# Now Commit
+
+>[action]
+>
+```bash
+$ git add .
+$ git commit -m 'added Timer class'
+$ git push
+```

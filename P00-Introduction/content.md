@@ -3,48 +3,60 @@ title: "React Redux Timers - Introduction"
 slug: react-redux-timers-introduction
 ---
 
-The goal of this tutorial is to create an app using React and Redux.
-the app will keep a list of timers timers can be run or stopped.
+The goal of the project is create a web app that stores list of timers.
+Timers will keep track of elapsed time. It could be used to track time for billing clients, scientific processes, or other uses. Through building this app, you will learn how to use React to manage views, and Redux to manage application state.
 
-This app created in this tutorial while not a complete product has
-many features that allow you to learn more about JavaScript, React
-and Redux. It also provides an opportunity to learn more about
-vanilla JavaScript and takes a close look at the Date Object and
-working with Timers.
+While not a complete product, this app has many features that allow you to learn more about JavaScript, React and Redux. It also provides an opportunity to learn more about vanilla JavaScript and takes a close look at the Date Object.
 
-The app created in this tutorial could be built into real world
-products like: [Toggl.com](http://toggl.com)
+The app created in this tutorial could be the basis of a real world
+product like [Toggl.com](http://toggl.com)!
 
 # Prerequisites
 
-To follow the tutorial you should have a basic understanding of JavaScript.
+To follow this tutorial, you should have...
 
-The tutorial assumes familiarity with React and JSX.
+- A basic understanding of JavaScript.
+- Familiarity with React and JSX.
+- Some understanding of the ES6 version of JavaScript
 
-Some understanding of the ES6 version of JS will also be helpful.
 
-# Introduction
+# Learning Outcomes
 
-The goal of the project is create a web app that stores list of timers.
-Timers will keep track of elapsed time.
+By the end of this tutorial, you should be able to...
 
-The app created in this tutorial could be built into real world
-products like: [Toggl.com](http://toggl.com)
+1. Build React components using JSX syntax
+1. Manage application state using the Flux pattern
+1. Generate random numbers and characters using JavaScript
+1. Practice manipulating strings with JavaScript
+1. Define class objects and utilize the OOP paradigm
 
-It could be used to track time for billing clients, or scientific
-processes or other uses.
+# User Stories
 
-This project uses React to manage views and Redux to manage
-application state.
+**TBD**
 
-## Concepts Covered
+# Using Git/GitHub
 
-- React
-  - JSX
-  - Components
-- JavaScript
-  - Generating random numbers and characters
-  - String methods and manipulating strings
-  - Class objects and OOP
-- Redux and React Redux
-  - Managing Application state with the Flux pattern
+Much like we've done in earlier tutorials, make sure you're committing your code as you complete milestones. At a minimum, you should make a commit whenever the tutorial prompts you.
+
+# Set Up Git/GitHub
+
+Set up your repo!
+
+>[action]
+> Make your first commit
+>
+```bash
+$ git init
+$ git add .
+$ git commit -m 'project init'
+```
+
+Now go to GitHub and create a public repository, and now associate it as a remote for your local git project and then push to it.
+
+>[action]
+> Push it!
+>
+```bash
+$ git remote add origin GITHUB-REPO-URL
+$ git push origin master -u
+```

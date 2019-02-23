@@ -33,6 +33,8 @@ class Timer {
     this.isRunning = false;
   }
 }
+
+export default Timer;
 ```
 
 Below is an example on how to create an instance of `Timer`:

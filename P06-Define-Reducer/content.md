@@ -275,7 +275,7 @@ Finally, we need to define the `Provider` component, which makes the Redux store
 
 > [action]
 >
-> Update your `App` class to the following:
+> Update your `App` class to the following in `App.js`:
 >
 ```js
 class App extends Component {

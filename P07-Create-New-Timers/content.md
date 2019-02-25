@@ -3,87 +3,94 @@ title: "React Redux Timers - Create new Timers"
 slug: react-redux-timers-create-new-timers
 ---
 
-# Create new Timers
+So far we have been working on getting Redux and React up and
+running and no work has gone into components, which is the heart of React!
 
-So far you have been working on getting Redux and React up and 
-running and no work has gone into components. Now it's time to 
-get the components working. 
+With actions and reducers in place you can now create
+containers/components that display state from the store and
+send actions to update the store. Let's get those working!
 
-With actions and reducers in place you can now create 
-containers/components that display state from the store and 
-send actions to update the store. 
+# New Timer Component
 
-## Show a list of timers
+The first component we'll build is for creating new timers. The new timer component should have the following:
 
-You need to create two components. 
+- A field to input a name
+- A button to save the timer
 
-**Displaying Components**
+> [info]
+>
+> The above field that will allow users to input a name is a **controlled component**. This is when "the React component that renders [an input] also controls what happens in that form on subsequent user input."
+>
+> You can read more about controlled components [here](https://reactjs.org/docs/forms.html#controlled-components)
 
-The Timer display can be as simple as a div with the name, 
-time, and start/stop button. 
+Keep in mind that we won't see timers until the Timer list component is created, which will be built in the next chapter.
 
-**New Timer Component**
-
-The new timer component should have field (controlled component)
-to input a name and a button to save the timer. 
-
-Start with the new Timer Component. Keep in mind that we 
-won't see timers until the Timer list component is created. 
-
-## Challenges 
-
-**New Timer Component/Container**
-
-Create a component with an input and a button. This component 
-shuold use the controlled conponent pattern.
-
-Use 'mapDispatchToProps' to connect the 'newTimer'
-action creator to this component. Here is a stub for the 
-component: 
-
-```JSX
+> [action]
+>
+> Create a new folder in `src` called `components`. Now within this folder, create a `new-timer.js` file which will house our new-timer component
+>
+> Fill in `/src/components/new-timer.js` with the following starter code
+>
+```js
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
-import { addTimer } from './actions'
-
+>
+// We need to import our action to add a new timer
+import { addTimer } from '../actions'
+>
 class NewTimer extends Component {
   constructor(props) {
     super(props)
-
-    // Store the name of of input name below on state
-    this.state = {}
+    this.state = { name: "" }
   }
+}
+```
 
+We now have a basic `NewTimer` component structure, but we have no idea how to render it! Remember we want to have the following:
+
+- A field to input a name
+- A button to save the timer
+
+Let's build that out in the render function:
+
+> [action]
+>
+> Fill in the `render` method in `/src/components/new-timer.js`, as well as adding a few other ancillary methods and an export statement:
+>
+```js
+class NewTimer extends Component {
+  ...
+>
   render() {
+  // Build out a component that takes a name as input and a save button to save the timer
     return (
-      <div>
-        {/* make this a controlled component */}
-        <input type='text' name="name" />
-        {/* The save button should addTimer from props and pass the name from state */}
-        <button>Save</button>
+      <div className="new-timer">
+        <input
+          className="new-timer__input"
+          type='text'
+          placeholder="New Timer Name"
+          name="name"
+          value={this.state.name}
+          onChange={(e) => this.setState({ name: e.target.value })}/>
+        <button
+          className="new-timer__button"
+          onClick={(e) => {
+            this.props.addTimer(this.state.name)
+          }}>Save</button>
       </div>
     )
   }
 }
-
+>
+// Not needed for this component
 const mapStateToProps = (state) => {
   return {}
 }
-
+>
+// Use 'mapDispatchToProps' to connect the 'newTimer' action creator to this component. Here is a stub for the component:
 const mapDispatchToProps = () => {
   return { addTimer }
 }
-
+>
 export default connect(mapStateToProps, mapDispatchToProps())(NewTimer)
 ```
-
-You may need to modify the names given here to match the 
-names you have used. 
-
-## Resources 
-
-- 
-
-
-

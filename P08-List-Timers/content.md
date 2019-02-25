@@ -4,34 +4,37 @@ slug: react-redux-timers-list-timers
 ---
 
 The list of timers will display all of the timers you have created.
-Each timer displayed in the list will display the name, time, and  
-a button to start or stop that timer.
+Each timer displayed in the list will need to display the following:
 
-## Timer List Component
+- Name
+- Time
+- A button to start or stop that timer. The start/stop button will send messages to the dispatcher.
 
-The Timer list should display a list of timers in the store.
-The start/stop button will send messages to the dispatcher.
+The Timer list itself should display the following:
 
-To access the redux store it will need to be a container/component.
+- A list of timers in the store.
 
-This component will use both mapStateToProps and
-mapDispatchToProps.
+To access the Redux store, the timer list will need to be a container/component.
 
-## mapStateToProps
+The array of timers and `selectTimer` action are passed to the component
+via `props` through the `mapStateToProps` and `mapDispatchToProps` functions.
 
-Create a new component: 'src/list-timers.js'.
+# List-Timers - Boilerplate
 
-```JSX
+> [action]
+>
+> Create a new file `src/list-timers.js` with the following boilerplate code:
+>
+```js
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { selectTimer } from './actions'
-
+import { selectTimer } from '../actions'
+>
 class ListTimers extends Component {
   constructor(props) {
     super(props)
-
   }
-
+>
   render() {
     return (
       <div>
@@ -40,54 +43,32 @@ class ListTimers extends Component {
     )
   }
 }
-
+>
 const mapStateToProps = (state) => {
   return { timers: state.timers }
 }
-
+>
 const mapDispatchToProps = () => {
   return { selectTimer }
 }
-
+>
 export default connect(mapStateToProps, mapDispatchToProps())(ListTimers)
 ```
 
-This implementation doesn't render the timers. It does set up the basic
-elements required for container/component to interface with Redux.
+While this implementation doesn't render the timers, it does set up the basic elements required for container/component to interface with Redux!
 
-The array of timers and selectTimer action are passed to the component
-via props through the 'mapStateToProps' and 'mapDispatchToProps' functions.
-
-## Component Architecture
-
-The Component Architecture in React is very flexible. Use it to
-your advantage in all situations. Use it to:
-
-Break pieces of larger components into smaller subcomponents. Using
-mulitple components makes each component smaller and easier to
-understand.
-
-Make components from elements that will be re-used in different contexts.
-Breaking things into more smaller components allows those components to
-be re-used.
-
-Use Components to create logical organization. Breaking elements into
-components gives your work a greater level of organization.
-
-Use components to offload display logic. Use components to handle
-tedious display logic like conversion of dates and times.
-
-### The Timer list
+# The Timer list
 
 The timer list could be implemented as a single component. This
 simple approach works but doesn't use React's Component
 architecture to your advantage.
 
-```JSX
+```js
 render() {
     return (
       <div>
         {this.props.timers.map((timer, i) => {
+         // Here the render method maps `this.props.timers` to:
           return (
             <div>
               <h2>{timer.name}</h2>
@@ -101,96 +82,149 @@ render() {
   }
 ```
 
-Here the render method maps `this.props.timers` to:
+This is simple, but why would we _not_ want to implement the component this way?
 
-```JSX
-<div>
-  <h2>{timer.name}</h2>
-  <h1>{timer.time}</h1>
-  <button>Start</button>
-</div>
-```
+> [solution]
+>
+> To make it completely functional you will have to
+add styles, possibly some more markup, the time will need to be formatted, and the button will require some logic and a click handler. What does this scream to us?
+>
+> **BLOAT!!**
+>
+> With these required additions this component would become far less manageable. In addition there would be a lot of logic, for things like formatting time, that is not core goal of this component, which is displaying a list of timers.
 
-This is simple but to make it completely functional you will have to
-add styles, possibly some more markup, the time will need to be formatted,
-and the button will require some logic and a click handler.
+It's always important to break components down into smaller, more easily manageable parts as opposed to inflating them unnecessarily.
 
-With these required additions this component would bloat and become
-far less managable. In addition there would be a lot of logic, for
-things like formatting time, that is not core goal of this component,
-which is displaying a list of timers.
+# Timer View Component
 
-## Timer View Component
+A better approach is to create a component that is responsible for displaying a single timer. Let's build this out first before we finish up the Timer List.
 
-A better approach is to create a component that is responsible for displaying
-a single timer.
-
-Create a file: 'src/timer-view.js'
-
-```JSX
+> [action]
+>
+> Create a file: `src/timer-view.js` with the following code:
+>
+```js
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
-import { toggleTimer } from './actions'
-
+>
+// Import our toggleTimer action
+import { toggleTimer } from '../actions'
+>
 class TimerView extends Component {
   constructor(props) {
     super(props)
-
   }
-
+>
+  // Timer should have its name, time, and a start/stop button (logic for this button will be built out later)
   render() {
+>
+  // Extract these specific props to use in the component
+  const { index, toggleTimer, timer } = this.props
     return (
       <div>
-        <h2>{this.props.timer.name}</h2>
-        <h1>{this.props.timer.time}</h1>
-        <button>Start</button>
+        <h2>{timer.name}</h2>
+        <h1>{timer.time}</h1>
+        <button
+            // This calls our toggleTimer action on the specific timer (specified by the index)
+            onClick={(e) => {
+                toggleTimer(index)
+            }}>
+            // Text of the button is determined by if the timer is running or not
+            {timer.isRunning ? "Stop" : "Start"}
+        </button>
       </div>
     )
   }
 }
-
+>
 const mapStateToProps = (state) => {
   return {}
 }
-
+>
+// Use the toggleTimer action for this component
 const mapDispatchToProps = () => {
   return { toggleTimer }
 }
-
+>
 export default connect(mapStateToProps, mapDispatchToProps())(TimerView)
 ```
 
-From here the render method in 'src/ListTimers.js' can be simplified to
+Notice: `TimerView` takes a `Timer` object as a prop: `timer={timer}`. The name and time properties could then be accessed as: `this.props.timer.name` and `this.props.timer.time` within `TimerView`. However, we'll introduce a shorthand to more easily access these properties so we don't need a long string every time.
 
-```JSX
-render() {
-  return (
-    <div>
-      {this.props.timers.map((timer, i) => <TimerView key={i} timer={timer} />)}
-    </div>
-  )
+From here, the render method in `src/components/list-timers.js` can be simplified!
+
+> [action]
+>
+> Update the imports and fill in the `render` method for `src/components/list-timers.js` with the following:
+>
+```js
+import TimerView from './timer-view'
+...
+class ListTimers extends Component {
+...
+  render() {
+    return (
+      <div>
+        {this.props.timers.map((timer, i) => <TimerView key={i} timer={timer} index={i} />)}
+      </div>
+    )
+  }
 }
 ```
 
-Notice: 'TimerView' takes a 'Timer' object as a prop: `timer={timer}`. The name
-and time properties are accessed as: `this.props.timer.name` and
-`this.props.timer.time` within 'TimerView'.
+# Putting it All Together
 
-You will need to import 'TimerView' at the top of 'ListTimers'
+At this stage, we can now create timers and have them appear, as well as press a start/stop button. Let's update `App.js` to actually show our timers so we have something to look at!
 
-`import TimerView from './timer-view'`
+> [action]
+>
+> Update `App.js` to import our `new-timer` and `list-timers` components and then put them in the `Provider`
+>
+```js
+import React, { Component } from 'react';
+>
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+>
+import reducers from './reducers';
+>
+import logo from './logo.svg';
+import './App.css';
+>
+[bold]import NewTimer from './components/new-timer'[/bold]
+[bold]import ListTimers from './components/list-timers'[/bold]
+>
+const store = createStore(reducers);
+>
+class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <div className="App">
+          <header className="App-header">
+            <h1 className="App-title">Welcome to React</h1>
+          </header>
+[bold]            <NewTimer />[/bold]
+[bold]            <ListTimers />[/bold]
+        </div>
+      </Provider>
+    );
+  }
+}
+>
+export default App;
+```
 
-## Challenges
+Go to your browser, and you should see something like the following when you load the page. It's not pretty (we'll fix that later) but Make sure you can create a timer and that it looks like the below screenshots:
 
-Add the `TimerList` and `TimerView` components. Implement these
-and get them to display your list of timers.
+**Home Screen (tiny new timer button at the bottom)**
+![home](assets/home.png)
 
-At this stage the Time should display the number of milliseconds
-that the timer has been running. Format this into something
-human readable. You can divide by 1000 to seconds, divide seconds
-by 60 to get minutes etc.
+**Creating a new timer named "foo"**
+![new timer](assets/new-timer.png)
 
-## Resources
+Currently our timers won't start when we press them, but the start/stop button should still change text when you press it
 
--
+> [action]
+>
+> Make sure your star/stop button changes text when you press it. If it doesn't go back through this chapter and make sure everything matches up. Now is a great time to practice your debugging skills!

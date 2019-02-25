@@ -3,8 +3,6 @@ title: "React Redux Timers - List Timers"
 slug: react-redux-timers-list-timers
 ---
 
-# List Timers
-
 The list of timers will display all of the timers you have created.
 Each timer displayed in the list will display the name, time, and  
 a button to start or stop that timer.
@@ -17,7 +15,7 @@ The start/stop button will send messages to the dispatcher.
 To access the redux store it will need to be a container/component.
 
 This component will use both mapStateToProps and
-mapDispatchToProps. 
+mapDispatchToProps.
 
 ## mapStateToProps
 

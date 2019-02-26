@@ -102,7 +102,7 @@ import throttle from 'lodash/throttle'
 Finally, let's tell our store to save state every 1000ms using Lodash's throttle method:
 > [action]
 >
-> Add the following below the declaration of the `store` const in `App.js`:
+> Replace the current `store.subscribe` call with the following in `App.js`:
 >
 ```js
 store.subscribe(throttle(() => {

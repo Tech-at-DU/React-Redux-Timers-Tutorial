@@ -7,81 +7,76 @@ In this section we'll walk through the methodology used to apply CSS to the New 
 
 # Class Naming: BEM
 
-Using a good class naming system is important and
-will make your work easier and your project more
-organized.
+Using a good class naming system is important and will make your work easier and your project more organized.
 
-[BEM](http://getbem.com/introduction/)
-(Block Element Modifier) is a system that
-describes a best practice for creating class names.
-This section will apply BEM to the New Timer
-component.
+[BEM](http://getbem.com/introduction/) (Block Element Modifier) is a system that describes a best practice for creating class names. This section will apply BEM to the New Timer component.
 
-I started with:
+Let's start with an example in `new-timer.js`. **Note:** the below example has all other features removed, and only shows the JSX elements for clarity.
 
-```HTML
-<div>
-  <input />
-  <button />
-</div>
-```
-
-I've left out all other features and am only showing
-JSX elements here for clarity.  
-
+> [action]
+>
+> Give the following `className`s to the JSX elements in `/src/components/new-timer.js`:
+>
 ```HTML
 <div className='new-timer'>
   <input className='new-timer__input' />
   <button className='new-timer__button' />
 </div>
 ```
-Notice the child elements share the name of the
-parent block, in this case: 'new-timer'. Using the
-name of the component also makes sense here as it will
-help us recognize where these styles are applied.
 
-Names are lowercase and use a hyphen at the word break.
+Let's break down the BEM syntax used above:
 
-Child elements are named with the block name followed
-by the element name separated by two underscores.
+- Notice the child elements share the name of the parent block, in this case: `new-timer`. Using the name of the component also makes sense here as it will help us recognize where these styles are applied.
+- Names are lowercase and use a hyphen at the word break.
+- Child elements are named with the block name followed by the element name separated by two underscores.
 
-Why? If you know the system you can easily understand
-the HTML element structure by reading the CSS.
+**Why do we do this?**
 
-Hyphens are used to separate words in a name. While the
+> [solution]
+>
+> If you know the system you can easily understand the HTML element structure by reading the CSS.
+>
+> In this case, hyphens are used to separate words in a name. While the
 double underscore identifies the next item as the element.
 
-# Adding some style
+# Adding Your Own Style
 
-These are the styles I used. Feel free to use your own
-creative vision in your work. These ideas might be
-helpful or inspiring.
+While styles are provided below and in the next chapters, feel free to use your own creative vision in your work. These ideas below might be helpful or inspiring.
 
-I want the input and the button to be side by side.
-This will be easy in the case because both are
-[inline](https://www.w3schools.com/css/css_inline-block.asp)
-elements.
+Let's get the input and the button to be side by side. This will be easy in the case because both are [inline](https://www.w3schools.com/css/css_inline-block.asp) elements.
 
-**Style the block**
+# Style the block
 
-Inline elements should be held in a
-[block](https://www.w3schools.com/html/html_blocks.asp).
-The parent div provides this.
+Inline elements should be held in a [block](https://www.w3schools.com/html/html_blocks.asp). The parent div provides this.
 
-I wanted to add some space arounf the whole block/group
-so I added [margin](https://www.w3schools.com/css/css_margin.asp).
+Let's add some space around the whole block/group by adding a [margin](https://www.w3schools.com/css/css_margin.asp).
 
+> [action]
+>
+> Create a new file `/src/components/new-timer.css`, and add the following to it:
+>
 ```css
 .new-timer {
   margin: 1em;
 }
 ```
+> Make sure to import the style in `/src/components/new-timer.js` so that we can see it on the browser:
+>
+```js
+...
+import './new-timer.css'
+...
+```
 
-**Style the Input Element**
+# Style the Input Element
 
-I wanted the input to have larger text and have some space
-between the border and the text so I added padding.
+The input should have larger text and have some space
+between the border and the text, so let's add some padding:
 
+> [action]
+>
+> Add the following to `/src/components/new-timer.css`:
+>
 ```css
 .new-timer__input {
   padding: 0.5em;
@@ -89,10 +84,12 @@ between the border and the text so I added padding.
 }
 ```
 
-Next I wanted to add a border and make round on the left.
-I'll make the button round on the right and put the two
-elements side by side.
+Next let's add a border and make it round on the left and right, and put the two elements side by side.
 
+> [action]
+>
+> Add the following to `/src/components/new-timer.css`:
+>
 ```css
 .new-timer__input {
   padding: 0.5em;
@@ -102,18 +99,21 @@ elements side by side.
 }
 ```
 
-[border-radius](https://www.w3schools.com/cssref/css3_pr_border-radius.asp)
-rounds all the corners with a single value.
-Otherwise you can include a value that sets the radius for
-all four corners. The first value is the upper left, and
-the values are applied clockwise.
+<!-- -->
 
-**Style the Button Element**
+> [info]
+>
+> [border-radius](https://www.w3schools.com/cssref/css3_pr_border-radius.asp) rounds all the corners with a single value. Otherwise you can include a value that sets the radius for all four corners. The first value is the upper left, and the values are applied clockwise.
 
-Next I want the button to be the same height as the input.
-By making the font and padding the same and giving it the
-same border width it should do it.
+# Style the Button Element
 
+Next let's style the button to be the same height as the input. We can accomplish this by making the font and padding the same and giving it the
+same border width.
+
+> [action]
+>
+> Add the following to `/src/components/new-timer.css`:
+>
 ```css
 .new-timer__button {
   border: 1px solid #000;
@@ -122,8 +122,12 @@ same border width it should do it.
 }
 ```
 
-I wanted the colors to be inverted compared to the input.
+Let's also invert the colors compared to the input.
 
+> [action]
+>
+> Update `new-timer__button` in `/src/components/new-timer.css` to the following:
+>
 ```css
 .new-timer__button {
   border: 1px solid #000;
@@ -134,8 +138,12 @@ I wanted the colors to be inverted compared to the input.
 }
 ```
 
-Then I rounded off the two right corners.
+Finally, round off the two right corners.
 
+> [action]
+>
+> Update `new-timer__button` in `/src/components/new-timer.css` to the following:
+>
 ```css
 .new-timer__button {
   border: 1px solid #000;
@@ -147,12 +155,11 @@ Then I rounded off the two right corners.
 }
 ```
 
+The end product should look like the following:
 
-# Challenges 
+![styled-new-timer](assets/styled-new-timer.png)
 
-Apply some styles your input.
-
-# Resources
+## Resources
 
 - http://getbem.com/introduction/
 - https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/

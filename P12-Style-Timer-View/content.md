@@ -3,15 +3,17 @@ title: "React Redux Timers - Style Timer View"
 slug: react-redux-timers-style-timer-view
 ---
 
-This section will talk about styling the Timer view 
-component. 
+We got our New Timer component all nice and dressed up, let's see if we can give a similar treatment to our Timer View!
 
 # Define Class Names
 
-Again following the BEM system. I started with this 
-markup. 
+Again following the BEM system. Let's add some classes to our JSX markup
 
-```jsx
+> [action]
+>
+> Add the following class names to the JSX markup in `/src/components/timer-view.js`. Note again that all other features removed, and only shows the JSX elements for clarity.
+>
+```js
 <div className='timer-view'>
   <div>
     <h2 className='timer-view-name__h2' />
@@ -21,10 +23,14 @@ markup.
 </div>
 ```
 
-## Style the Block
+# Style the Block
 
-I used Flex Box to layout the block. 
+Now that we have our class names, let's build out the style. Start with using Flex Box to layout the block.
 
+> [action]
+>
+> Create the file `/src/components/timer-view.css` and add the following to it:
+>
 ```css
 .timer-view {
   display: flex;
@@ -35,52 +41,61 @@ I used Flex Box to layout the block.
 }
 ```
 
-By declaring this element as `display:flex` it becomes a
-flex container and it's children become flex items. 
+By declaring this element as `display:flex` it becomes a **flex container** and it's children become **flex items.**
 
-The child elements in this case are: 
+The child elements in this case are:
 
 - `<div>`
 - `<button>`
 
-`flex-direction:row` arranges the elements on the 
-horizontal axis. 
+There's a few other new properties here, let's break each of them down:
 
-`justify-content: space-between` adds any extra space 
+- `flex-direction:row` arranges the elements on the
+horizontal axis.
+- `justify-content: space-between` adds any extra space
 between the flex items with no space on the outside
 (far left and right).
+- `align-items: stretch` stretches flex items to fill the
+container from the top to the bottom. This property
+controls the cross-axis.
 
-`align-items: stretch` stretches flex items to fill the 
-container from the top to the bottom. This property 
-controls the cross-axis. 
+# Style the Name and Time
 
-## Style the Name and Time
+Ok our block is ready, let's give the name and time some style too:
 
+> [action]
+>
+> Add the following to `/src/components/timer-view.css`:
+>
 ```css
 .timer-view-name__h2 {
   margin: 0;
   font-size: 1.25em;
 }
-
+>
 .timer-view-time__h1 {
   margin: 0;
   font-size: 2em;
 }
 ```
 
-The headings h1 - h6 all have margin on the top and bottom.
-I removed that set the size of the font to something I 
-thought looked nice. 
+The headings `h1` - `h6` all have margin on the top and bottom.
+We removed that, and set the size of the font to something a bit more legible and aesthetically pleasing.
 
-When the `em` unit sets the size based on the base font
-size. Setting fonts in this way is good practice. You 
-can control the size of both elements by setting the 
-`font-size` on the body element. For example, if the 
-font size of the body element were `12px`, the h2 would 
-appear as 15px and h1 would be 24px. 
+> [info]
+>
+> The `em` unit sets the font size based on the _base_ font size. Setting fonts in this way is good practice, as you can control the size of both elements by setting the `font-size` on the body element.
+>
+> For example, if the font size of the body element were `12px`, the `h2` would appear as `15px` and `h1` would be `24px`.
 
-## Style the button
+# Style the button
 
+Let's bring it home and give our start/stop button some style too:
+
+> [action]
+>
+> Add the following to `/src/components/timer-view.css`:
+>
 ```css
 .timer-view__button {
   width: 78px;
@@ -92,22 +107,17 @@ appear as 15px and h1 would be 24px.
 }
 ```
 
-I wanted the button to have it's height and width to be
-equal. There is no CSS property, or generally easy way 
-to do this. There are some [hacks](https://www.w3schools.com/howto/howto_css_aspect_ratio.asp).
-
-To keep things simple I just measured the height of the 
-container and set the height in px. 
+In order to get the button height/width to be equal, there's no CSS property, or generally easy way to do it. However, there are some [hacks](https://www.w3schools.com/howto/howto_css_aspect_ratio.asp) we can use to accomplish this. To keep things simple for the above, I just measured the height of the container and set the width of the button in px to match (or at least get close to it).
 
 ## BEM Modifers
 
 Some classes are used to modify an element. For example you
 might have a class that styles a button and another class
-that modifys buttons when they are disabled, or used for 
-dangerous operations such as deleting. 
+that modifies buttons when they are disabled, or used for
+dangerous operations such as deleting.
 
-In the BEM system you'll put the modifier at the end of the 
-class name and separate it with two hyphens. For example: 
+In the BEM system, you'll put the modifier at the end of the
+class name and separate it with two hyphens. For example:
 
 ```css
 .button {}
@@ -115,47 +125,64 @@ class name and separate it with two hyphens. For example:
 .button--dangerous {}
 ```
 
-These two styles will be used to invert the colors of the 
-button when the timer is running or stopped. 
+These two styles will be used to invert the colors of the
+button when the timer is running or stopped.
 
+> [action]
+>
+> Add the following to `/src/components/timer-view.css`:
+>
 ```css
 .timer-view__button--start {
   color: #000;
   background-color: #fff;
 }
-
+>
 .timer-view__button--stop {
   color: #fff;
   background-color: #000;
 }
 ```
 
-To make these styles useful they need to be applied to the
-element in code. The buttons are dynamic and change state 
-the classes need to be swapped when the button changes
-state. 
+These styles are useless on their own. In order to have them be applied, the modifiers need to be applied to the element in code.
 
-In render method of 'view-timer.js' add soemthing like: 
+In order for the styles to work correctly, the classes need to be swapped when the button changes state.
 
-`const buttonClass = isRunning ? "stop" : "start";`
+> [action]
+>
+> In the render method of `/src/components/timer-view.js` add the following `const` statement:
+>
+```js
+...
+render() {
+    const { index, toggleTimer, timer } = this.props;
+[bold]    const buttonClass = timer.isRunning ? "stop" : "start";[/bold]
+    ...
+}
+```
 
-This will get the name 'stop' or 'start' depending on the 
-value of `isRunning`. 
+`buttonClass` will now have the value of either "stop" or "start" depending on the value of `isRunning`!
 
-Next in the JSX block find the button `className` and 
-modify it to something like: 
+Now that we're tracking which state the button is in via a const, we can use that to help us dynamically change the button's `className`!
 
-```JSX
+> [action]
+>
+> In the JSX markup of `/src/components/timer-view.js`, edit the `className` of the `<button>` to the following:
+>
+```JS
 className={`timer-view__button timer-view__button--${buttonClass}`}
 ```
 
-## Challenges 
+Open your browser and start/stop some timers. They should now look like the following:
 
-Make the styles your own. These are pretty simple. You 
-can do more and improve the appearance. 
+![style-timer-view](assets/style-timer-view.png)
 
-## Resources 
+> [challenge]
+>
+> 1. Make the styles your own. These are pretty simple. You
+can do more and improve the appearance!
+> 1. Also, that giant header taking everything over sure is annoying. Fix it so that it stops getting in the way!
+
+## Resources
 
 - https://www.w3schools.com/css/css3_flexbox.asp
-
-

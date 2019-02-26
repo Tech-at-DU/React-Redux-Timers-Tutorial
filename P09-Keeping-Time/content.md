@@ -191,3 +191,13 @@ return (
 Your timers should now look like something like the following:
 
 ![formatted-timers](assets/format-timers.png)
+
+# Now Commit
+
+>[action]
+>
+```bash
+$ git add .
+$ git commit -m 'timers running'
+$ git push
+```

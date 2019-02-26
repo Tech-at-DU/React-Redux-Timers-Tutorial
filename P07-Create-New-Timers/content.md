@@ -101,3 +101,13 @@ export default connect(mapStateToProps, mapDispatchToProps())(NewTimer)
 >
 > - `mapStateToProps` is used for selecting the part of the data from the store that the connected component needs. You can read more about it [here](https://react-redux.js.org/using-react-redux/connect-mapstate)
 > - `mapDispatchToProps` is used for dispatching actions to the store. You can read more about it [here](https://react-redux.js.org/using-react-redux/connect-mapdispatch)
+
+# Now Commit
+
+>[action]
+>
+```bash
+$ git add .
+$ git commit -m 'added new timer input'
+$ git push
+```

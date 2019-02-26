@@ -163,3 +163,13 @@ The end product should look like the following:
 
 - http://getbem.com/introduction/
 - https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
+
+# Now Commit
+
+>[action]
+>
+```bash
+$ git add .
+$ git commit -m 'styled new timer input'
+$ git push
+```

@@ -228,3 +228,13 @@ Currently our timers won't start when we press them, but the start/stop button s
 > [action]
 >
 > Make sure your star/stop button changes text when you press it. If it doesn't go back through this chapter and make sure everything matches up. Now is a great time to practice your debugging skills!
+
+# Now Commit
+
+>[action]
+>
+```bash
+$ git add .
+$ git commit -m 'added list of timers'
+$ git push
+```

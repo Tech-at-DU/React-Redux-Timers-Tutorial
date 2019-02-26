@@ -186,3 +186,13 @@ can do more and improve the appearance!
 ## Resources
 
 - https://www.w3schools.com/css/css3_flexbox.asp
+
+# Now Commit
+
+>[action]
+>
+```bash
+$ git add .
+$ git commit -m 'styled timer view'
+$ git push
+```

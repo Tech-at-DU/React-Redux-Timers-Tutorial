@@ -3,7 +3,23 @@ title: "React Redux Timers - Define Reducer"
 slug: react-redux-timers-define-reducer
 ---
 
-Next we need to build a **reducer** to handle changes in state. Before we build them, let's breifly revisit what application state will look like.
+## User Stories
+
+1. ~~Build a Timer object~~
+1. ~~Define the Actions of a Timer~~
+1. **Define the Reducers of a Timer**
+    1. Determine how many reducers we need in order to accomplish our goals
+    1. Build out a reducer for a selected timer
+    1. Build out a reducer for an array of timers
+1. Allow users to create a Timer
+1. Allow users to see a list of Timers
+1. Users should be able to start/stop the clock on their Timers
+1. Style the app
+1. Allow Timers to persist
+
+Next we need to build a **reducer** to handle changes in state. Before we build them, let's briefly revisit what application state will look like.
+
+# Store Review
 
 Remember the **store** is a JavaScript Object with key values that
 represent 'pieces' of state. A piece of state is one Key on the

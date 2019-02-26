@@ -3,6 +3,22 @@ title: "React Redux Timers - List Timers"
 slug: react-redux-timers-list-timers
 ---
 
+## User Stories
+
+1. ~~Build a Timer object~~
+1. ~~Define the Actions of a Timer~~
+1. ~~Define the Reducers of a Timer~~
+1. ~~Allow users to create a Timer~~
+1. **Allow users to see a list of Timers**
+    1. Create a `list-timers` component that will house a list of timers
+    1. Create a `timer-view` component to describe what a timer looks like
+    1. Within the `timer-view`, allow for display of a name, time, and start/stop button
+    1. Start/stop button should change text when clicked for now
+    1. Display your progress so far in the browser
+1. Users should be able to start/stop the clock on their Timers
+1. Style the app
+1. Allow Timers to persist
+
 The list of timers will display all of the timers you have created.
 Each timer displayed in the list will need to display the following:
 

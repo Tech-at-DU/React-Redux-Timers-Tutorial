@@ -32,7 +32,14 @@ By the end of this tutorial, you should be able to...
 
 # User Stories
 
-**TBD**
+1. Build a Timer object
+1. Define the Actions of a Timer
+1. Define the Reducers of a Timer
+1. Allow users to create a Timer
+1. Allow users to see a list of Timers
+1. Users should be able to start/stop the clock on their Timers
+1. Style the app
+1. Allow Timers to persist
 
 # Using Git/GitHub
 

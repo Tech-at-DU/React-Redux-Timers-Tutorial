@@ -3,6 +3,19 @@ title: "React Redux Timers - Persisting Timers"
 slug: react-redux-timers-persisting-timers
 ---
 
+## User Stories
+
+1. ~~Build a Timer object~~
+1. ~~Define the Actions of a Timer~~
+1. ~~Define the Reducers of a Timer~~
+1. ~~Allow users to create a Timer~~
+1. ~~Allow users to see a list of Timers~~
+1. ~~Users should be able to start/stop the clock on their Timers~~
+1. ~~Style the app~~
+1. **Allow Timers to persist**
+    1. Load and save state between the Store and Local Storage
+    1. Throttle the save to local storage to improve performance
+
 Our timers are working, they're styled and looking fly, but they still don't quite do one thing yet: persist! If you refresh the page, or open a new tab on `localhost`, the timers disappear.
 
 In this last chapter, we'll fix that by persisting the timers with local storage.

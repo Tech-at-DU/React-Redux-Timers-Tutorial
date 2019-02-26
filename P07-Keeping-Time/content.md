@@ -5,6 +5,21 @@ slug: react-redux-timers-keeping-time
 
 So we have everything displaying, but the timers still aren't running. It's about time we fixed that and actually gave the start/stop buttons something to do!
 
+## User Stories
+
+1. ~~Build a Timer object~~
+1. ~~Define the Actions of a Timer~~
+1. ~~Define the Reducers of a Timer~~
+1. ~~Allow users to create a Timer~~
+1. ~~Allow users to see a list of Timers~~
+1. **Users should be able to start/stop the clock on their Timers**
+    1. Learn how to properly track the delta time for each timer
+    1. Create an Update action that updates the time for a given timer
+    1. Insure your reducer knows how to properly handle your update action
+    1. Tell the store to run Update so that the view can display the accurate time
+1. Style the app
+1. Allow Timers to persist
+
 # Update Action
 
 Currently we have all these actions associated with timers, but nothing that tells them how to update the time on the views. We need to build out an update action so that the timers can make sure to regularly update their time. This action Object only needs a type, and the payload should be the number of milliseconds since the last update.
@@ -112,10 +127,7 @@ const timerReducer = (state = [], action) => {
 }
 ```
 
-The above creates a new array of timers. For all timers
-where the `isRunning` property is `true` it makes a new timer
-Object where `time` is the old `time` plus the `deltaTime` on the
-payload.
+The above creates a new array of timers. For all timers where the `isRunning` property is `true` it makes a new timer Object where `time` is the old `time` plus the `deltaTime` on the payload.
 
 # Update the View
 

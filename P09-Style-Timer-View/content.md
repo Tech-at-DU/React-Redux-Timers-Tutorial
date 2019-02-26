@@ -3,6 +3,23 @@ title: "React Redux Timers - Style Timer View"
 slug: react-redux-timers-style-timer-view
 ---
 
+## User Stories
+
+1. ~~Build a Timer object~~
+1. ~~Define the Actions of a Timer~~
+1. ~~Define the Reducers of a Timer~~
+1. ~~Allow users to create a Timer~~
+1. ~~Allow users to see a list of Timers~~
+1. ~~Users should be able to start/stop the clock on their Timers~~
+1. **Style the app**
+    1. ~~Style the new timer container~~
+    1. ~~Style the new timer input box~~
+    1. ~~Style the new timer input button~~
+    1. Style the timer container
+    1. Style the timer text (name, time)
+    1. Style the timer start/stop button
+1. Allow Timers to persist
+
 We got our New Timer component all nice and dressed up, let's see if we can give a similar treatment to our Timer View!
 
 # Define Class Names

@@ -3,6 +3,23 @@ title: "React Redux Timers - Style New Timer Input"
 slug: react-redux-timers-adding-styles
 ---
 
+## User Stories
+
+1. ~~Build a Timer object~~
+1. ~~Define the Actions of a Timer~~
+1. ~~Define the Reducers of a Timer~~
+1. ~~Allow users to create a Timer~~
+1. ~~Allow users to see a list of Timers~~
+1. ~~Users should be able to start/stop the clock on their Timers~~
+1. **Style the app**
+    1. Style the new timer container
+    1. Style the new timer input box
+    1. Style the new timer input button
+    1. Style the timer container
+    1. Style the timer text (name, time)
+    1. Style the timer start/stop button
+1. Allow Timers to persist
+
 In this section we'll walk through the methodology used to apply CSS to the New Timer component and it's elements.
 
 # Class Naming: BEM

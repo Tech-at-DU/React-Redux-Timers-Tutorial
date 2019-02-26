@@ -10,6 +10,22 @@ With actions and reducers in place you can now create
 containers/components that display state from the store and
 send actions to update the store. Let's get those working!
 
+## User Stories
+
+1. ~~Build a Timer object~~
+1. ~~Define the Actions of a Timer~~
+1. ~~Define the Reducers of a Timer~~
+1. **Allow users to create a Timer**
+    1. Create a `new-timer` component
+    1. Allow that component to use the addTimer action
+    1. Allow for input of a name for the timer
+    1. Save the name of the timer
+    1. Build a button to allow the user to add a timer
+1. Allow users to see a list of Timers
+1. Users should be able to start/stop the clock on their Timers
+1. Style the app
+1. Allow Timers to persist
+
 # New Timer Component
 
 The first component we'll build is for creating new timers. The new timer component should have the following:

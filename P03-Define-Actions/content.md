@@ -3,6 +3,20 @@ title: "React Redux Timers - Defining Actions"
 slug: react-redux-timers-defining-actions
 ---
 
+## User Stories
+
+1. ~~Build a Timer object~~
+1. **Define the Actions of a Timer**
+    1. Review how actions and action creators work in Flux and Redux
+    1. Define what we want a Timer to be able to do
+    1. For each action, define a Redux action and action creator
+1. Define the Reducers of a Timer
+1. Allow users to create a Timer
+1. Allow users to see a list of Timers
+1. Users should be able to start/stop the clock on their Timers
+1. Style the app
+1. Allow Timers to persist
+
 ## Defining Actions
 
 The Flux pattern and Redux require that
@@ -10,9 +24,9 @@ you define **actions** that describe how data can be modified. A few key points 
 
 1. **Data can only be modified through actions.**
 1. Each action should be defined as a `const` with string value.
-1. Each action needs an **action creatoer**
+1. Each action needs an **action creator**
 
-But wait, we just covered actoins, what's an action creator? An action creator is a _function that returns an object with a **type**, and a **payload** when a value needs to accompany the action._
+But wait, we just covered actions, what's an action creator? An action creator is a _function that returns an object with a **type**, and a **payload** when a value needs to accompany the action._
 
 For example, a `SELECT_BOOK` action creator might look like this:
 

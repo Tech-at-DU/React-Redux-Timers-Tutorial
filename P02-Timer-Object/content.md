@@ -3,6 +3,19 @@ title: "React Redux Timers - Timer Object"
 slug: react-redux-timers-timer-object
 ---
 
+## User Stories
+
+1. **Build a Timer object**
+    1. Create a Timer Class
+    1. Assign name, time, and isRunning properties to the class
+1. Define the Actions of a Timer
+1. Define the Reducers of a Timer
+1. Allow users to create a Timer
+1. Allow users to see a list of Timers
+1. Users should be able to start/stop the clock on their Timers
+1. Style the app
+1. Allow Timers to persist
+
 ## Defining the Timer Object
 
 The app will create and store Objects that define a timer. Timer objects will have the following properties that will define it:

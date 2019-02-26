@@ -109,7 +109,7 @@ Let's bring it home and give our start/stop button some style too:
 
 In order to get the button height/width to be equal, there's no CSS property, or generally easy way to do it. However, there are some [hacks](https://www.w3schools.com/howto/howto_css_aspect_ratio.asp) we can use to accomplish this. To keep things simple for the above, I just measured the height of the container and set the width of the button in px to match (or at least get close to it).
 
-## BEM Modifers
+## BEM Modifiers
 
 Some classes are used to modify an element. For example you
 might have a class that styles a button and another class

@@ -114,6 +114,8 @@ Now the timers are updating every 50ms, but state is only being written to local
 
 Try refreshing the tab or opening a new tab on `localhost` and see your timers persist!
 
+Congrats! We got some practice managing local storage in the context of **managing application state through the Flux pattern!** Not to mention some pretty sweet timers to boot.
+
 # Now Commit
 
 >[action]
@@ -126,6 +128,6 @@ $ git push
 
 # Feedback and Review
 
-Please take a moment to rate your understanding of learning outcomes from this tutorial, and how we can improve it via our [tutorial feedback form](LINK_TO_YOUR_FORM)
+Please take a moment to rate your understanding of learning outcomes from this tutorial, and how we can improve it via our [tutorial feedback form](https://goo.gl/forms/uytCya0slBpsOXPf2)
 
 This allows us to get feedback on how well the students are grasping the learning outcomes, and tells us where we can improve the tutorial experience.

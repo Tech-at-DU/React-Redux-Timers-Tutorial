@@ -229,6 +229,8 @@ Currently our timers won't start when we press them, but the start/stop button s
 >
 > Make sure your star/stop button changes text when you press it. If it doesn't go back through this chapter and make sure everything matches up. Now is a great time to practice your debugging skills!
 
+Whew, that was a lot, but we've now **built another two React components with JSX syntax,** and also got to see **data/state be passed using the Flux pattern!** Now if only our timers actually...timed anything! We'll fix that in the next chapter but first...
+
 # Now Commit
 
 >[action]

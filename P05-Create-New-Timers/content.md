@@ -102,6 +102,8 @@ export default connect(mapStateToProps, mapDispatchToProps())(NewTimer)
 > - `mapStateToProps` is used for selecting the part of the data from the store that the connected component needs. You can read more about it [here](https://react-redux.js.org/using-react-redux/connect-mapstate)
 > - `mapDispatchToProps` is used for dispatching actions to the store. You can read more about it [here](https://react-redux.js.org/using-react-redux/connect-mapdispatch)
 
+First React component in the bag! Great work on **building a react component using JSX syntax**, as well as getting more practice **managing application state**. But we can't stop here, let's build another component!
+
 # Now Commit
 
 >[action]

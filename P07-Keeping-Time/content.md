@@ -192,6 +192,8 @@ Your timers should now look like something like the following:
 
 ![formatted-timers](assets/format-timers.png)
 
+Alright! We've successfully **used timing methods and objects in JavaScript to accurately track time!** And because of it, our timers now work! This is great! They still look a little ugly though, let's spruce them up a bit.
+
 # Now Commit
 
 >[action]

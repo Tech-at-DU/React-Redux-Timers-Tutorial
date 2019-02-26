@@ -43,6 +43,8 @@ Below is an example on how to create an instance of `Timer`:
 var myTimer = new Timer('Workout');
 ```
 
+Great work, this is just the beginning of **defining class objects to utilize in an OOP paradigm!** We'll build upon this throughout the tutorial.
+
 ## Resources
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes

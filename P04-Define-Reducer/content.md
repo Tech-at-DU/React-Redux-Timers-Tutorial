@@ -300,8 +300,9 @@ Your app should be displaying the following in your browser:
 
 ![welcome](assets/welcome.png)
 
-At this stage the app is all set up to use Redux! You can build
-components that connect to the store and send actions.
+At this stage the app is all set up to use Redux! You can build components that connect to the store and send actions.
+
+Building out our reducers gave us some good practice with getting **further acquainted with the Flux pattern!** And now we're ready to move on and build out our React Components!
 
 ## Resources
 

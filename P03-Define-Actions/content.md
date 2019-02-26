@@ -194,6 +194,8 @@ export const SELECT_TIMER = "SELECT_TIMER"
 ...
 ```
 
+We're now well on our way to **building React components and managing state using the Flux pattern**, but we've got some work to do before we're finished.
+
 # Now Commit
 
 >[action]

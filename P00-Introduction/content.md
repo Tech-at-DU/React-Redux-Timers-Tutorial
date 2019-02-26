@@ -26,8 +26,8 @@ By the end of this tutorial, you should be able to...
 
 1. Build React components using JSX syntax
 1. Manage application state using the Flux pattern
-1. Generate random numbers and characters using JavaScript
-1. Practice manipulating strings with JavaScript
+1. Use timing methods and objects in JavaScript to accurately track time
+1. Use the BEM system to create class names for styling
 1. Define class objects and utilize the OOP paradigm
 
 # User Stories

@@ -159,6 +159,8 @@ The end product should look like the following:
 
 ![styled-new-timer](assets/styled-new-timer.png)
 
+Looking good! Great work on **using the BEM system to create class names!** It's a lot easier to style components when there's a clear structure. Let's keep it going by styling our other main component!
+
 ## Resources
 
 - http://getbem.com/introduction/

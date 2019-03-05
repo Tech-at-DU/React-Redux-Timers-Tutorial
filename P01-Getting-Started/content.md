@@ -63,7 +63,7 @@ folders:
 
 - **`src`**: You'll do your work in the `src` folder. *This folder contains
 all of the React Components.*
-    - **All of the components you create must be stored in the 'src' folder.**
+    - **All of the code you create must be stored in the 'src' folder.**
 - **`index.js`:** defines `ReactDOM.render()`. This loads and
 displays the `App` component. *This is the entry point
 for a react app. You won't need to edit this file.*

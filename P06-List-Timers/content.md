@@ -231,7 +231,26 @@ class App extends Component {
 export default App;
 ```
 
-Go to your browser, and you should see something like the following when you load the page. It's not pretty (we'll fix that later) but Make sure you can create a timer and that it looks like the below screenshots:
+If you open your browser now, you'll notice that the header is taking up the majority of the screen! This is due to the default CSS in the `App.css` file. Let's tweak this so that we can actually see what's going on:
+
+> [action]
+>
+> Edit the `min-height` for `.App-header` in `App.css` to be `10vh`:
+>
+```css
+.App-header {
+  background-color: #282c34;
+[bold]  min-height: 10vh;[/bold]
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+```
+
+Now go to your browser, and you should see something like the following when you load the page. It's not pretty (we'll fix that later) but Make sure you can create a timer and that it looks like the below screenshots:
 
 **Home Screen (tiny new timer button at the bottom)**
 ![home](assets/home.png)

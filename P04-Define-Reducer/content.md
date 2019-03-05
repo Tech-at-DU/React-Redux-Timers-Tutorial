@@ -1,5 +1,5 @@
 ---
-title: "React Redux Timers - Define Reducer"
+title: "Define Reducer"
 slug: react-redux-timers-define-reducer
 ---
 

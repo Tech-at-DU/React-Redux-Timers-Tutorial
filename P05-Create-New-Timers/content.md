@@ -1,5 +1,5 @@
 ---
-title: "React Redux Timers - Create new Timers"
+title: "Create New Timers"
 slug: react-redux-timers-create-new-timers
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "React Redux Timers - Persisting Timers"
+title: "Persisting Timers"
 slug: react-redux-timers-persisting-timers
 ---
 

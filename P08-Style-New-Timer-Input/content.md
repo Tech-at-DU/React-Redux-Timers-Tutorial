@@ -1,5 +1,5 @@
 ---
-title: "React Redux Timers - Style New Timer Input"
+title: "Style New Timer Input"
 slug: react-redux-timers-adding-styles
 ---
 

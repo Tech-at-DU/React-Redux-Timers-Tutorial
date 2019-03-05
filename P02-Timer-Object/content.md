@@ -1,5 +1,5 @@
 ---
-title: "React Redux Timers - Timer Object"
+title: "Timer Object"
 slug: react-redux-timers-timer-object
 ---
 

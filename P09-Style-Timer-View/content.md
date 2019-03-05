@@ -1,5 +1,5 @@
 ---
-title: "React Redux Timers - Style Timer View"
+title: "Style Timer View"
 slug: react-redux-timers-style-timer-view
 ---
 

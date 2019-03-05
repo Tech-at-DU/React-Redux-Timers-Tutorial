@@ -1,5 +1,5 @@
 ---
-title: "React Redux Timers - Keeping Time"
+title: "Keeping Time"
 slug: react-redux-timers-keeping-time
 ---
 

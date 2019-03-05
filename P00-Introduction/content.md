@@ -1,5 +1,5 @@
 ---
-title: "React Redux Timers - Introduction"
+title: "Timers - Introduction"
 slug: react-redux-timers-introduction
 ---
 

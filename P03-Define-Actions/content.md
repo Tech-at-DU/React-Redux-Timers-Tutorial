@@ -3,7 +3,7 @@ title: "React Redux Timers - Defining Actions"
 slug: react-redux-timers-defining-actions
 ---
 
-## User Stories
+## Technical Planning
 
 1. ~~Build a Timer object~~
 1. **Define the Actions of a Timer**

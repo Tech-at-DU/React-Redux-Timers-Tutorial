@@ -5,7 +5,7 @@ slug: react-redux-timers-keeping-time
 
 So we have everything displaying, but the timers still aren't running. It's about time we fixed that and actually gave the start/stop buttons something to do!
 
-## User Stories
+## Technical Planning
 
 1. ~~Build a Timer object~~
 1. ~~Define the Actions of a Timer~~

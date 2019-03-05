@@ -3,7 +3,7 @@ title: "Define Reducer"
 slug: react-redux-timers-define-reducer
 ---
 
-## User Stories
+## Technical Planning
 
 1. ~~Build a Timer object~~
 1. ~~Define the Actions of a Timer~~

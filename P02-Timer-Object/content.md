@@ -3,7 +3,7 @@ title: "Timer Object"
 slug: react-redux-timers-timer-object
 ---
 
-## User Stories
+## Technical Planning
 
 1. **Build a Timer object**
     1. Create a Timer Class

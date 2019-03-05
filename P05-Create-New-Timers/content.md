@@ -10,7 +10,7 @@ With actions and reducers in place you can now create
 containers/components that display state from the store and
 send actions to update the store. Let's get those working!
 
-## User Stories
+## Technical Planning
 
 1. ~~Build a Timer object~~
 1. ~~Define the Actions of a Timer~~

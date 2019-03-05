@@ -3,7 +3,7 @@ title: "Style New Timer Input"
 slug: react-redux-timers-adding-styles
 ---
 
-## User Stories
+## Technical Planning
 
 1. ~~Build a Timer object~~
 1. ~~Define the Actions of a Timer~~

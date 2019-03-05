@@ -3,7 +3,7 @@ title: "Style Timer View"
 slug: react-redux-timers-style-timer-view
 ---
 
-## User Stories
+## Technical Planning
 
 1. ~~Build a Timer object~~
 1. ~~Define the Actions of a Timer~~

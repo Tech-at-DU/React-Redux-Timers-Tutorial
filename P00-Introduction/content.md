@@ -30,7 +30,7 @@ By the end of this tutorial, you should be able to...
 1. Use the BEM system to create class names for styling
 1. Define class objects and utilize the OOP paradigm
 
-# User Stories
+# Technical Planning
 
 1. Build a Timer object
 1. Define the Actions of a Timer

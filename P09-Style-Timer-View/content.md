@@ -196,9 +196,8 @@ Open your browser and start/stop some timers. They should now look like the foll
 
 > [challenge]
 >
-> 1. Make the styles your own. These are pretty simple. You
+> Make the styles your own. These are pretty simple. You
 can do more and improve the appearance!
-> 1. Also, that giant header taking everything over sure is annoying. Fix it so that it stops getting in the way!
 
 Well done! Going through this has hopefully shown the power of **using the BEM system to create class names!** We got one last feature to implement for our timers app, let's wrap this up!
 

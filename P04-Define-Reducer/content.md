@@ -184,7 +184,7 @@ Alright, now we're ready to define a reducer for timers.
 >
 ```js
 // Import all of our actions
-import { NEW_TIMER, RESET_TIMER, DELETE_TIMER, START_TIMER, STOP_TIMER, TOGGLE_TIMER } from '../actions';
+import { NEW_TIMER, TOGGLE_TIMER } from '../actions';
 >
 const timerReducer = (state = [], action) => {
   switch (action.type) {
@@ -192,39 +192,6 @@ const timerReducer = (state = [], action) => {
       // Add a new timer, return a copy of state
       const name = action.payload.name ? action.payload.name : `Timer ${state.length}`
       return [...state, new Timer(name)]
->
-    case RESET_TIMER:
-      // Reset the timer at index, return a copy of state
-      return state.map((timer, index) => {
-        if (action.payload.index === index) {
-          timer.time = 0
-        }
-        return timer
-      })
->
-    case DELETE_TIMER:
-      // Remove the timer at index, return a copy of state.
-      return state.filter((timer, index) => {
-        return action.payload.index !== index
-      })
->
-    case START_TIMER:
-      // Set the isRunning property of the timer at index to true, return a copy of state
-      return state.map((timer, index) => {
-        if (action.payload.index === index) {
-          timer.isRunning = true
-        }
-        return timer
-      })
->
-    case STOP_TIMER:
-      // Set the isRunning property of the timer at index to false, return a copy of state
-      return state.map((timer, index) => {
-        if (action.payload.index === index) {
-          timer.isRunning = false
-        }
-        return timer
-      })
 >
     case TOGGLE_TIMER:
       // Invert the isRunning property of timer at index, return a copy of state

@@ -46,11 +46,7 @@ Let's start by defining the actions before making the app!
 The app needs to do the following things with timers:
 
 - Add a new timer
-- Reset a timer
-- Delete a timer
-- Start a timer
-- Stop a timer
-- Toggle a timer
+- Toggle a timer (start/stop)
 - Select a timer
 
 First we need a place to store all these actions:
@@ -76,77 +72,6 @@ export const addTimer = (name) => {
   return {
     type: NEW_TIMER,
     payload: { name }
-  }
-}
-```
-
-# Reset Timer
-
-`RESET_TIMER` - Sets the time of a timer to 0. This requires the id or index of a timer.
-
-> [action]
->
-> Add the following to `src/actions/index.js`:
->
-```js
-export const resetTimer = (index) => {
-  return {
-    type: RESET_TIMER,
-    payload: { index }
-  }
-}
-```
-
-# Delete Timer
-
-`DELETE_TIMER` - Removes a timer from the array of timers in the
-store. This will require the index of the timer.
-
-> [action]
->
-> Add the following to `src/actions/index.js`:
->
-```js
-export const deleteTimer = (index) => {
-  return {
-    type: DELETE_TIMER,
-    payload: { index }
-  }
-}
-```
-
-# Start Timer
-
-`START_TIMER` - This action starts a timer running, and
-requires the index of the timer to start.
-
-> [action]
->
-> Add the following to `src/actions/index.js`:
->
-```js
-export const startTimer = (index) => {
-  return {
-    type: START_TIMER,
-    payload: { index }
-  }
-}
-```
-
-# Stop Timer
-
-`STOP_TIMER` - Stops a timer at the current time. This requires
-the index of the timer.
-
-> [action]
->
-> Add the following to `src/actions/index.js`:
->
-```js
-export const stopTimer = (index) => {
-  return {
-    type: STOP_TIMER,
-    payload: { index }
   }
 }
 ```
@@ -199,10 +124,6 @@ Alright, all of our actions are in place, and we're exporting our action creator
 >
 ```js
 export const NEW_TIMER    = "NEW_TIMER"
-export const RESET_TIMER  = "RESET_TIMER"
-export const DELETE_TIMER = "DELETE_TIMER"
-export const START_TIMER  = "START_TIMER"
-export const STOP_TIMER   = "STOP_TIMER"
 export const TOGGLE_TIMER = "TOGGLE_TIMER"
 export const SELECT_TIMER = "SELECT_TIMER"
 ...

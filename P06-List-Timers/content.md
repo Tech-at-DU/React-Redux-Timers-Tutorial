@@ -266,6 +266,10 @@ Currently our timers won't start when we press them, but the start/stop button s
 
 Whew, that was a lot, but we've now **built another two React components with JSX syntax,** and also got to see **data/state be passed using the Flux pattern!** Now if only our timers actually...timed anything! We'll fix that in the next chapter but first...
 
+> [challenge]
+>
+> What if we want to delete a timer? Add functionality so that we can delete a timer from the list.
+
 # Now Commit
 
 >[action]

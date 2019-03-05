@@ -48,7 +48,7 @@ dependancies. The last command may take a few seconds to start the app for the f
 
 When the the above commands are complete, a tab pointed to `localhost` should open in your browser and it should look like the below:
 
-![screenshot.png](assets/screenshot.png)
+![react-app](assets/react-app.png)
 
 The project is now running on `localhost:3000`. This local server is
 for development.

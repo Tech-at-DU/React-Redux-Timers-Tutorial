@@ -172,11 +172,11 @@ Timers can be hard for people to read if they're only displaying the time in mil
 >
 ```js
 export const formatTime = (time) => {
-    const ms = Math.round(time / 100)
-    const secs = Math.floor(time / 1000)
-    const mins = Math.floor(secs / 60)
-    const hrs = Math.floor(mins / 60)
-    return `${hrs % 60}:${mins % 60}:${secs % 60}.${ms % 10}`
+    const ms = Math.round(time / 100) % 10
+    const secs = Math.floor(time / 1000) % 60
+    const mins = Math.floor(time / 1000 / 60) % 60
+    const hrs = Math.floor(time / 1000 / 1000 / 60) % 60
+    return `${hrs}:${mins}:${secs}.${ms}`
 }
 ```
 >
@@ -199,6 +199,12 @@ return (
     </div>
 )
 ```
+
+<!-- -->
+
+> [challenge]
+>
+> Our `formatTime` function uses a lot of repetitive code. Can you refactor it so that it's written in a way that is more in line with the DRY principle?
 
 Your timers should now look like something like the following:
 

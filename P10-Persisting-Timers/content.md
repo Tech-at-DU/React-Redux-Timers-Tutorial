@@ -129,6 +129,8 @@ Try refreshing the tab or opening a new tab on `localhost` and see your timers p
 
 Congrats! We got some practice managing local storage in the context of **managing application state through the Flux pattern!** Not to mention some pretty sweet timers to boot.
 
+As you go through this FEW course, try to tie the concepts you learned here into the course material. The foundational work here on building React apps will be used to make bigger and bolder apps down the road!
+
 # Now Commit
 
 >[action]
@@ -139,7 +141,9 @@ $ git commit -m 'persisting timers'
 $ git push
 ```
 
-# Feedback and Review
+# Feedback and Review - 2 minutes
+
+**We promise this won't take longer than 2 minutes!**
 
 Please take a moment to rate your understanding of learning outcomes from this tutorial, and how we can improve it via our [tutorial feedback form](https://goo.gl/forms/uytCya0slBpsOXPf2)
 

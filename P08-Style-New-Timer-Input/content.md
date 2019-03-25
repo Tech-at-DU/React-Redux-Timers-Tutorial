@@ -172,6 +172,8 @@ Finally, round off the two right corners.
 }
 ```
 
+# Product So Far
+
 The end product should look like the following:
 
 ![styled-new-timer](assets/styled-new-timer.png)

@@ -200,21 +200,13 @@ return (
 )
 ```
 
-<!-- -->
-
-> [challenge]
->
-> Our `formatTime` function uses a lot of repetitive code. Can you refactor it so that it's written in a way that is more in line with the DRY principle?
+# Product So Far
 
 Your timers should now look like something like the following:
 
 ![formatted-timers](assets/format-timers.png)
 
 Alright! We've successfully **used timing methods and objects in JavaScript to accurately track time!** And because of it, our timers now work! This is great! They still look a little ugly though, let's spruce them up a bit.
-
-> [challenge]
->
-> Being able to start/stop a timer is great, but what about being able reset a timer so that we can use it again? Implement a reset button for your timers that resets the time. Reset should stop the timer and then set it back to `00:00:00.0`
 
 # Now Commit
 
@@ -225,3 +217,10 @@ $ git add .
 $ git commit -m 'timers running'
 $ git push
 ```
+
+# Stretch Challenges
+
+> [challenge]
+>
+> 1. Our `formatTime` function uses a lot of repetitive code. Can you refactor it so that it's written in a way that is more in line with the DRY principle?
+> 1. Being able to start/stop a timer is great, but what about being able reset a timer so that we can use it again? Implement a reset button for your timers that resets the time. Reset should stop the timer and then set it back to `00:00:00.0`

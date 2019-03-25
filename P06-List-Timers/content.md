@@ -250,6 +250,8 @@ If you open your browser now, you'll notice that the header is taking up the maj
 }
 ```
 
+# Product So far
+
 Now go to your browser, and you should see something like the following when you load the page. It's not pretty (we'll fix that later) but Make sure you can create a timer and that it looks like the below screenshots:
 
 **Home Screen (tiny new timer button at the bottom)**
@@ -266,10 +268,6 @@ Currently our timers won't start when we press them, but the start/stop button s
 
 Whew, that was a lot, but we've now **built another two React components with JSX syntax,** and also got to see **data/state be passed using the Flux pattern!** Now if only our timers actually...timed anything! We'll fix that in the next chapter but first...
 
-> [challenge]
->
-> What if we want to delete a timer? Add functionality so that we can delete a timer from the list.
-
 # Now Commit
 
 >[action]
@@ -279,3 +277,9 @@ $ git add .
 $ git commit -m 'added list of timers'
 $ git push
 ```
+
+# Stretch Challenge
+
+> [challenge]
+>
+> What if we want to delete a timer? Add functionality so that we can delete a timer from the list.

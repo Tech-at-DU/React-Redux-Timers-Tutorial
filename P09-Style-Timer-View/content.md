@@ -190,14 +190,11 @@ Now that we're tracking which state the button is in via a const, we can use tha
 className={`timer-view__button timer-view__button--${buttonClass}`}
 ```
 
+# Product So Far
+
 Open your browser and start/stop some timers. They should now look like the following:
 
 ![style-timer-view](assets/style-timer-view.png)
-
-> [challenge]
->
-> Make the styles your own. These are pretty simple. You
-can do more and improve the appearance!
 
 Well done! Going through this has hopefully shown the power of **using the BEM system to create class names!** We got one last feature to implement for our timers app, let's wrap this up!
 
@@ -214,3 +211,10 @@ $ git add .
 $ git commit -m 'styled timer view'
 $ git push
 ```
+
+# Stretch Challenge
+
+> [challenge]
+>
+> Make the styles your own. These are pretty simple. You
+can do more and improve the appearance!

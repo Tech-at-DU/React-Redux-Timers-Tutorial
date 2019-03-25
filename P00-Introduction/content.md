@@ -11,6 +11,10 @@ While not a complete product, this app has many features that allow you to learn
 The app created in this tutorial could be the basis of a real world
 product like [Toggl.com](http://toggl.com)!
 
+# Why is this important?
+
+This gives practice in building web apps using React and getting familiar with the JSX syntax. As you go throughout this course, we'll be building more complex apps, so it's good to have the fundamentals down, which you'll learn in this tutorial!
+
 # Prerequisites
 
 To follow this tutorial, you should have...

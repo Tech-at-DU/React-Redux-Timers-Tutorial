@@ -40,7 +40,7 @@ a command line tool: `Create React App` that will do this for you.
 ```bash
 $ npx create-react-app tmrz-app
 $ cd tmrz-app
-$ npm start
+$ yarn start
 ```
 
 **Note:** The first command above may take a few seconds to install all of file
@@ -64,24 +64,17 @@ folders:
 - **`src`**: You'll do your work in the `src` folder. *This folder contains
 all of the React Components.*
     - **All of the code you create must be stored in the 'src' folder.**
-- **`index.js`:** defines `ReactDOM.render()`. This loads and
-displays the `App` component. *This is the entry point
-for a react app. You won't need to edit this file.*
-- **`app.js`:** contains the root component for the app. At the
-moment this file defines everything you see when you
-run the default app.
+    - **`index.js`:** defines `ReactDOM.render()`. This loads and displays the `App` component. *This is the entry point for a react app. You won't need to edit this file.*
+    - **`app.js`:** contains the root component for the app. At the moment this file defines everything you see when you run the default app.
 
-You will break your app into components and import these
-components into the `App` component. Each new component will
-be defined in a new file in the `src` directory.
+You will break your app into components and import these components into the `App` component. Each new component will be defined in a new file in the `src` directory.
 
 
 # Redux
 
 [Redux](https://redux.js.org/) is a tool for managing application state. Redux is based on the [Flux](https://facebook.github.io/flux/) pattern developed by Facebook, which imposes a unidirectional data flow.
 
-*Redux is a JavaScript implementation of Flux,* and while Redux stands on it's own,
-it is often used with React.
+*Redux is a JavaScript implementation of Flux,* and while Redux stands on it's own, it is often used with React.
 
 This happens so often, that there now exists a library that integrates Redux with React called **React-Redux**.
 

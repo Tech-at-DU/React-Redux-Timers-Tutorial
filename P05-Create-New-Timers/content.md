@@ -43,26 +43,29 @@ Keep in mind that we won't see timers until the Timer list component is created,
 
 > [action]
 >
-> Create a new folder in `src` called `components`. Now within this folder, create a `new-timer.js` file which will house our new-timer component
+> Create a new folder in `src` called `components`. Now within this folder, create a `NewTimer.js` file which will house our new-timer component
 >
-> Fill in `/src/components/new-timer.js` with the following starter code
+> Fill in `/src/components/NewTimer.js` with the following starter code
 >
 ```js
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 >
 // We need to import our action to add a new timer
 import { addTimer } from '../actions'
 >
-class NewTimer extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { name: "" }
-  }
+export default function NewTimer() {
+	const [ name, setName ] = useState('')
+>
+	return (
+		<div>
+
+		</div>
+	)
 }
 ```
 
-We now have a basic `NewTimer` component structure, but we have no idea how to render it! Remember we want to have the following:
+You now have a basic `NewTimer` component structure, but we have no idea how to render it! Remember we want to have the following:
 
 - A field to input a name
 - A button to save the timer
@@ -71,52 +74,30 @@ Let's build that out in the render function:
 
 > [action]
 >
-> Fill in the `render` method in `/src/components/new-timer.js`, as well as adding a few other ancillary methods and an export statement:
+> Fill in the `render` method in `/src/components/NewTimer.js`, as well as adding a few other ancillary methods and an export statement:
 >
 ```js
-class NewTimer extends Component {
-  ...
+export default function NewTimer() {
+	const [ name, setName ] = useState('')
 >
-  render() {
-  // Build out a component that takes a name as input and a save button to save the timer
-    return (
-      <div>
-        <input
-          type='text'
-          placeholder="New Timer Name"
-          name="name"
-          value={this.state.name}
-          onChange={(e) => this.setState({ name: e.target.value })}/>
-        <button
-          onClick={(e) => {
-            this.props.addTimer(this.state.name)
-          }}>Save</button>
-      </div>
-    )
-  }
+	return (
+		<div>
+			<input
+				type='text'
+				placeholder="New Timer Name"
+				name="name"
+				value={name}
+				onChange={(e) => setName(e.target.value)}/>
+			<button
+				onClick={() => dispatch(addTimer(name))}
+			>Save</button>
+		</div>
+	)
 }
->
-// Not needed for this component
-const mapStateToProps = (state) => {
-  return {}
-}
->
-// Use 'mapDispatchToProps' to connect the 'newTimer' action creator to this component. Here is a stub for the component:
-const mapDispatchToProps = () => {
-  return { addTimer }
-}
->
-export default connect(mapStateToProps, mapDispatchToProps())(NewTimer)
 ```
 
-<!-- -->
-
-> [info]
->
-> Info on the ancilarry functions:
->
-> - `mapStateToProps` is used for selecting the part of the data from the store that the connected component needs. You can read more about it [here](https://react-redux.js.org/using-react-redux/connect-mapstate)
-> - `mapDispatchToProps` is used for dispatching actions to the store. You can read more about it [here](https://react-redux.js.org/using-react-redux/connect-mapdispatch)
+- UseDispatch - will give you access to the Redux store and allow your component to send actions when you need to update the store.
+- useState - is used to create a value that will be available across multiple renders of this component. 
 
 First React component in the bag! Great work on **building a react component using JSX syntax**, as well as getting more practice **managing application state**. But we can't stop here, let's build another component!
 

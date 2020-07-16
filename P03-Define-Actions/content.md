@@ -68,6 +68,7 @@ Let's build each of these out, action by action:
 > Add the following to `src/actions/index.js`:
 >
 ```js
+export const NEW_TIMER = 'NEW_TIMER'
 export const addTimer = (name) => {
   return {
     type: NEW_TIMER,
@@ -87,6 +88,7 @@ index of the timer.
 > Add the following to `src/actions/index.js`:
 >
 ```js
+export const TOGGLE_TIMER = 'TOGGLE_TIMER'
 export const toggleTimer = (index) => {
   return {
     type: TOGGLE_TIMER,
@@ -106,6 +108,7 @@ of the timer.
 > Add the following to `src/actions/index.js`:
 >
 ```js
+export const SELECT_TIMER = 'SELECT_TIMER'
 export const selectTimer = (index) => {
   return {
     type: SELECT_TIMER,
@@ -114,20 +117,9 @@ export const selectTimer = (index) => {
 }
 ```
 
-# Did We Forget Something?
+# Why make a variable for each action name? 
 
-Alright, all of our actions are in place, and we're exporting our action creators! We're still missing one last piece though: in order for other modules to access these actions, _we need to export our actions as well!_
-
-> [action]
->
-> Add the following export lines to the top of `src/actions/index.js`:
->
-```js
-export const NEW_TIMER    = "NEW_TIMER"
-export const TOGGLE_TIMER = "TOGGLE_TIMER"
-export const SELECT_TIMER = "SELECT_TIMER"
-...
-```
+These action names are all stored as strings. You'll be referencing them in more than one place in your app. By defining the vairable the value appears only in a single location and can easily be changed. Exporting the variable from this file allows the code editor to catch errors and prevents us from making spelling mistakes. 
 
 We're now well on our way to **building React components and managing state using the Flux pattern**, but we've got some work to do before we're finished.
 

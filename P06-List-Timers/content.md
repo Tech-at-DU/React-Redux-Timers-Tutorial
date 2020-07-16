@@ -19,86 +19,79 @@ slug: react-redux-timers-list-timers
 1. Style the app
 1. Allow Timers to persist
 
-The list of timers will display all of the timers you have created.
-Each timer displayed in the list will need to display the following:
+The list of timers will display all of the timers you have created. Each timer displayed in the list will need to display the following:
 
 - Name
 - Time
-- A button to start or stop that timer. The start/stop button will send messages to the dispatcher.
+- Start/Stop - A button to start or stop that timer.
 
 The Timer list itself should display the following:
 
 - A list of timers in the store.
 
-To access the Redux store, the timer list will need to be a container/component.
-
-The array of timers and `selectTimer` action are passed to the component
-via `props` through the `mapStateToProps` and `mapDispatchToProps` functions.
-
 # List-Timers - Boilerplate
 
 > [action]
 >
-> Create a new file `src/list-timers.js` with the following boilerplate code:
+> Create a new file `src/ListTimers.js` with the following boilerplate code:
 >
 ```js
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import { selectTimer } from '../actions'
 >
-class ListTimers extends Component {
-  constructor(props) {
-    super(props)
-  }
->
-  render() {
-    return (
-      <div>
-       {/* render timers here */}
-      </div>
-    )
-  }
+export default function ListTimers() {
+>	
+	return (
+		<div>
+			{/* render timers here */}
+		</div>
+	)
 }
->
-const mapStateToProps = (state) => {
-  return { timers: state.timers }
-}
->
-const mapDispatchToProps = () => {
-  return { selectTimer }
-}
->
-export default connect(mapStateToProps, mapDispatchToProps())(ListTimers)
 ```
 
-While this implementation doesn't render the timers, it does set up the basic elements required for container/component to interface with Redux!
+While this implementation doesn't render the timers (yet), it does set up the basic elements required for container/component to interface with Redux!
 
 # The Timer list
 
-The timer list could be implemented as a single component. This
-simple approach works but doesn't use React's Component
-architecture to your advantage.
+To render the list of timers you need to get the timers array from the store. To do this use: `useSelector()`. Pass this method a function that receives state and returns the piece of state you need. 
+
+Add the code below. This should get the `timers` piece of your state, and then map it to a JSX block that will be displayed by the component. 
 
 ```js
-render() {
-    return (
-      <div>
-        {this.props.timers.map((timer, i) => {
-         // Here the render method maps `this.props.timers` to:
-          return (
-            <div>
-              <h2>{timer.name}</h2>
-              <h1>{timer.time}</h1>
-              <button>Start</button>
-            </div>
-          )
-        })}
-      </div>
-    )
-  }
+export default function ListTimers() {
+	const timers = useSelector(state => state.timers)
+
+	return (
+		<div>
+			{timers.map((timer, i) => {
+				// Here the render method maps `this.props.timers` to:
+				return (
+					<div>
+						<h2>{timer.name}</h2>
+						<h1>{timer.time}</h1>
+						<button>Start</button>
+					</div>
+				)
+			})}
+		</div>
+	)
+}
 ```
 
-This is simple, but why would we _not_ want to implement the component this way?
+The timer list could be implemented as a single component. This simple approach works but doesn't use React's Component architecture to your advantage.
+
+A better approach is to make a component from the block inside map: 
+
+```js
+<div>
+  <h2>{timer.name}</h2>
+  <h1>{timer.time}</h1>
+  <button>Start</button>
+</div>
+```
+
+
 
 > [solution]
 >
@@ -117,74 +110,61 @@ A better approach is to create a component that is responsible for displaying a 
 
 > [action]
 >
-> Create a file: `src/timer-view.js` with the following code:
+> Create a file: `src/TimerView.js` with the following code:
 >
 ```js
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
->
+import React, {  } from 'react'
+import { useDispatch } from 'react-redux'
 // Import our toggleTimer action
 import { toggleTimer } from '../actions'
 >
-class TimerView extends Component {
-  constructor(props) {
-    super(props)
-  }
->
-  // Timer should have its name, time, and a start/stop button (logic for this button will be built out later)
-  render() {
->
+export default function TimerView(props) {
   // Extract these specific props to use in the component
-  const { index, toggleTimer, timer } = this.props
-    return (
-      <div>
-        <h2>{timer.name}</h2>
-        <h1>{timer.time}</h1>
-        <button
-            // This calls our toggleTimer action on the specific timer (specified by the index)
-            onClick={(e) => {
-                toggleTimer(index)
-            }}>
-            // Text of the button is determined by if the timer is running or not
-            {timer.isRunning ? "Stop" : "Start"}
-        </button>
-      </div>
-    )
-  }
-}
+  const { index, timer } = props
+  const dispatch = useDispatch()
 >
-const mapStateToProps = (state) => {
-  return {}
+  return (
+    <div>
+      <h2>{timer.name}</h2>
+      <h1>{timer.time}</h1>
+      <button
+        onClick={() => dispatch(toggleTimer(index))}
+      >
+        {timer.isRunning ? "Stop" : "Start"}
+      </button>
+    </div>
+  )
 }
->
-// Use the toggleTimer action for this component
-const mapDispatchToProps = () => {
-  return { toggleTimer }
-}
->
-export default connect(mapStateToProps, mapDispatchToProps())(TimerView)
 ```
 
-Notice: `TimerView` takes a `Timer` object as a prop: `timer={timer}`. The name and time properties could then be accessed as: `this.props.timer.name` and `this.props.timer.time` within `TimerView`. However, we'll introduce a shorthand to more easily access these properties so we don't need a long string every time.
+Notice: `TimerView` takes a `Timer` object as a prop: `timer={timer}`. The name and time properties could then be accessed as: `props.timer.name` and `props.timer.time` within `TimerView`. However, we'll introduce a shorthand to more easily access these properties so we don't need a long string every time.
 
-From here, the render method in `src/components/list-timers.js` can be simplified!
+From here, the render method in `src/components/ListTimers.js` can be simplified!
 
 > [action]
 >
-> Update the imports and fill in the `render` method for `src/components/list-timers.js` with the following:
+> Update the imports and fill in the `render` method for `src/components/ListTimers.js` with the following:
 >
 ```js
-import TimerView from './timer-view'
+import TimerView from './TimerView'
 ...
-class ListTimers extends Component {
-...
-  render() {
-    return (
-      <div>
-        {this.props.timers.map((timer, i) => <TimerView key={i} timer={timer} index={i} />)}
-      </div>
-    )
-  }
+export default function ListTimers() {
+	const timers = useSelector(state => state.timers)
+>
+	return (
+		<div>
+			{timers.map((timer, i) => {
+				// Here the render method maps `this.props.timers` to:
+				return (
+					<TimerView 
+						key={`timer-${i}`} 
+						timer={timer} 
+						index={i} 
+					/>
+				)
+			})}
+		</div>
+	)
 }
 ```
 
@@ -194,60 +174,186 @@ At this stage, we can now create timers and have them appear, as well as press a
 
 > [action]
 >
-> Update `App.js` to import our `new-timer` and `list-timers` components and then put them in the `Provider`
+> Update `App.js` to import our `NewTimer` and `ListTimers` components and then put them in the `Provider`
 >
 ```js
-import React, { Component } from 'react';
->
+import React from 'react';
+import './App.css';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
->
 import reducers from './reducers';
->
-import logo from './logo.svg';
-import './App.css';
->
-[bold]import NewTimer from './components/new-timer'[/bold]
-[bold]import ListTimers from './components/list-timers'[/bold]
+// import new components
+import NewTimer from './components/NewTimer'
+import ListTimers from './components/ListTimers'
 >
 const store = createStore(reducers);
 >
-class App extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">Welcome to React</h1>
-          </header>
-[bold]            <NewTimer />[/bold]
-[bold]            <ListTimers />[/bold]
-        </div>
-      </Provider>
-    );
-  }
+function App() {
+  return (
+    <Provider store={store}>
+      <h1>TMRZ</h1>
+      {/* Display the new components */}
+      <NewTimer />
+      <ListTimers />
+    </Provider>
+  );
 }
 >
 export default App;
 ```
 
-If you open your browser now, you'll notice that the header is taking up the majority of the screen! This is due to the default CSS in the `App.css` file. Let's tweak this so that we can actually see what's going on:
+Currently the app is working but needs some styles. 
 
-> [action]
->
-> Edit the `min-height` for `.App-header` in `App.css` to be `10vh`:
->
-```css
-.App-header {
-  background-color: #282c34;
-[bold]  min-height: 10vh;[/bold]
+A common pattern for styling react Components is to create a stylesheet for each component and import those styles into each component. 
+
+This method has it's pros and cons. 
+
+Pros: It makes the components portable. You can copy the styles .css file along with the component .js file together and move them into a new project. 
+
+Cons: Using a .css for each component you will have lots of css styles floating around making it easy to have duplicate class names or other selectors. 
+
+You will use this strategy for this project. To address the concerns above you'll assign the root element of each component a css class name that matches the component name. 
+
+### App Styles 
+
+Open App.css and delete all of the styles. Add these styles: 
+
+```CSS
+.App {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
+```
+
+Open App.js and import thise style sheet by adding this to the top of the page:
+
+```JS
+import './App.css';
+```
+
+Next add a root element that will get the css class name: `App`
+
+```JS
+<Provider store={store}>
+  <div className="App">
+    <h1>TMRZ</h1>
+    ...
+  </div>
+</Provider>
+```
+
+With this in place the style should arrange all the children of `div.App` in a column centered in the page. 
+
+
+### NewTimer Styles
+
+The NewTimer component has container with two children. Give the container element a class name that matches the component name: 
+
+```JS
+export default function NewTimer() {
+	...
+	return (
+		<div className="NewTimer">
+			...
+		</div>
+	)
+}
+```
+
+Make a new file: `NewTimer.css`
+
+```CSS
+.NewTimer {
+	display: flex;
+	justify-content: center;
+}
+
+.NewTimer > input {
+	font-size: 1rem;
+	padding: 0.25rem 0.5rem;
+	border-radius: 0.5rem 0 0 0.5rem;
+	border: 1px solid;
+	margin: 0;
+}
+
+.NewTimer > button {
+	font-size: 1rem;
+	padding: 0.25rem 0.5rem;
+	border-radius: 0 0.5rem 0.5rem 0;
+	border: 1px solid #000;
+	margin: 0;
+	background-color: #000;
+	color: #fff;
+	font-weight: bold;
+}
+```
+
+Notice we used the child selector (>) here. This keeps these styles scoped to the parent class name on the parent element. 
+
+Import the styles at the top of `NewTimer.js`
+
+```JS
+import './NewTimer.css'
+```
+
+### TimerView Styles 
+
+The TimerView component has a three child elements: Name, Time, and Start/Stop button. Let's arrange these in a row with the time in the center and the other elements at either end of the row. 
+
+Open `TimerView.js` and add a class name on the root element. 
+
+```js
+export default function TimerView(props) {
+  ...
+  return (
+    <div className="TimerView">
+      ...
+    </div>
+  )
+}
+```
+
+Make a new CSS file: `TimerView.css`
+
+```CSS
+.TimerView {
+	width: 320px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: baseline;
+}
+
+.TimerView > h1 {
+	flex:1;
+	margin: 1rem;
+	text-align: left;
+	font-variant-numeric: tabular-nums;
+}
+
+.TimerView > h2 {
+	flex: 1;
+}
+
+.TimerView > button {
+	padding: 0.25rem 0.5rem;
+	border-radius: 0.5rem;
+	border: 1px solid #000;
+	background-color: #000;
+	color: #fff;
+	font-size: 1rem;
+	font-weight: bold;
+	width: 4rem;
+}
+```
+
+Here you styled each of the three children: h1, h2, and button of the parent `div.TimerView`. 
+
+Import your style sheet at the top of `TimerView.js`
+
+```JS
+import './TimerView.css'
 ```
 
 # Product So far

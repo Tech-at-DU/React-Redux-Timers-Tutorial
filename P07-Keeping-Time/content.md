@@ -44,7 +44,7 @@ export const update = (deltaTime) => {
 
 # Quick Aside on Delta Time
 
-Wow hang on, what's `deltaTime`? We're going to be using `deltaTime` to help calculate what time the timer should be displaying.
+Wow hang on, what's `deltaTime`? You're going to be using `deltaTime` to help calculate what time the timer should be displaying.
 
 The CPU is in charge of handling a _lot_ of stuff, so while keeping time sounds simple, it's hard for the CPU to do it accurately given all the other processes it has on its plate.
 
@@ -102,14 +102,21 @@ Here time is calculated as such:
 >
 >The Date Object provides a long list of methods that allow you to use for wide range purposes.
 
-
 # Update Reducer
 
 Armed with this new knowledge on timing, intervals, and dates in JavaScript, let's update our `timers-reducer.js` file to handle our new Update action:
 
 > [action]
 >
-> Update `src/reducers/timers-reducer.js` to handle the new actions 'UPDATE' action.
+> Update `src/reducers/timersReducer.js` to handle the new actions 'UPDATE' action.
+>
+> Import the `UPDATE` at the top:
+>
+```JS
+import { NEW_TIMER, TOGGLE_TIMER, UPDATE } from '../actions';
+```
+>
+> Then add another case to your switch statement:
 >
 ```js
 const timerReducer = (state = [], action) => {
@@ -180,24 +187,19 @@ export const formatTime = (time) => {
 }
 ```
 >
-> Now use that function in `/src/components/timer-view.js` to display the time correctly. Remember to import the util:
+> Now use that function in `/src/components/TimerView.js` to display the time correctly. Remember to import the util:
+>
+> Import `formatTime` at the top:
 >
 ```js
-...
 import { formatTime } from '../utils';
+```
+> Then use `formatTime` to format the time: 
+> 
+```JS
 ...
-return (
-    <div>
-        <h2>{timer.name}</h2>
-[bold]        <h1>{formatTime(timer.time)}</h1> [/bold]
-        <button
-            onClick={(e) => {
-                toggleTimer(index)
-            }}>
-            {timer.isRunning ? "Stop" : "Start"}
-        </button>
-    </div>
-)
+<h1>{formatTime(timer.time)}</h1>
+...
 ```
 
 # Product So Far

@@ -22,11 +22,15 @@ In this last chapter, we'll fix that by persisting the timers with local storage
 
 # Overview
 
-Before we begin, let's take inventory of a few things:
+Before you begin, let's take inventory of a few things:
 
 1. The Redux store is a JavaScript Object.
 1. Local storage only allows for strings.
 1. Therefore, _if we can convert the Redux store to JSON, it would be possible to convert the store to local storage and back._
+
+JSON is JavaScript Object Notation. It's a string format that represents a JavasScript object. You can use it as a JS object in most cases and JS objects will convert to JSON most of the time. 
+
+When does it not work? If you're Object contains values that things other than: Strings, Numbers, Arrays, or Objects. What else is left? functions and classes! An Object that contains a function can't be converted to JSON. 
 
 # Save and Retrieve the store
 
@@ -70,7 +74,7 @@ export const saveState = (state) => {
 ...
 ```
 
-Now we need to persist state subscribe to changes from the store in `App.js`. Also we need to make sure we import these new methods into `App.js`
+To persist state subscribe to changes from the `store` in `App.js`. 
 
 > [action]
 >

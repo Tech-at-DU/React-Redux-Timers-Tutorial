@@ -21,34 +21,24 @@ Next we need to build a **reducer** to handle changes in state. Before we build 
 
 # Store Review
 
-Remember the **store** is a JavaScript Object with key values that
-represent 'pieces' of state. A piece of state is one Key on the
-Object that holds one part of state.
+The **store** is a JavaScript Object with properties and values. 
 
-For this app we will put an array of timers on one piece of state,
-and the index of the selected timer on another piece of state.
+You could say each property on the store object is a 'pieces' of your overall application state. 
+
+For this app we will put an array of timers on one piece of state, and the index of the selected timer on another piece of state. 
 
 With this arrangement the store would look like this:
 
 ```JavaScript
 {
-  timers: [ Timer1, Timer2, Timer3, etc],
+  timers: [ Timer1, Timer2, Timer3, ... ],
   selectedTimer: 0
 }
 ```
 
-Each Timer will be generated from the `Timer` class and will look like this:
+Values are assigned to each piece of state through a reducer. A reducer is a function that is responsible for making chnages to state. 
 
-```JavaScript
-{
-  name: "Test",
-  time: 17872,
-  isRunning: false
-}
-```
-
- To accomplish this, let's define two reducers: one for 'timers' and the other
-for 'selectedTimer'
+You'll need a reducer for each piece of state. Above we've defined two properties: `timers` and `selectedTimer` so we need a reducer for each. 
 
 > [action]
 >
@@ -61,13 +51,13 @@ value passed in the `payload` of the `SELECT_TIMER` action.
 
 > [action]
 >
-> Create a new file `src/reducers/select-timer-reducer.js` with the following code:
+> Create a new file `src/reducers/selectedTimerReducer.js` with the following code:
 >
 ```js
 // Import the SELECT_TIMER action
 import { SELECT_TIMER } from '../actions';
 >
-const selectTimerReducer = (state = null, action) => {
+const selectedTimerReducer = (state = null, action) => {
   switch (action.type) {
     // On the SELECT_TIMER action, set the selectedTimer to the value passed in the payload
     case SELECT_TIMER:
@@ -78,7 +68,7 @@ const selectTimerReducer = (state = null, action) => {
   }
 }
 >
-export default selectTimerReducer;
+export default selectedTimerReducer;
 ```
 
 # References and Redux
@@ -87,19 +77,15 @@ The Timers Reducer has a bit more work to get up and running, since it's respons
 
 ## JavaScript Array Manipulation
 
-Primitives (strings, numbers, booleans) are always stored as values, and when assigned,
-those values are **copied** (a new one is created).
+Primitives (strings, numbers, booleans) are always stored as values, and when assigned, those values are **copied** (a new value is created).
 
-Objects, Arrays, and Functions are **not copied when assigned to variables.**
-Instead a reference to the original is assigned. _Making changes to the Array doesn't make a new reference!_
+Objects, Arrays, and Functions are **not copied when assigned to variables.** Instead a reference to the original is assigned. _When assigning an array to another variable both variables will reference the same array!_
 
 Check out the example [here](https://repl.it/@MitchellHudson/Array-equivalency) to see this with real code!
 
 **Understanding this is important to understanding JavaScript and Redux.**
 
-**Redux requires a reducer to return a new object.** If a reducer
-returns the same object, Redux will not see a change and will not
-update views.
+**Redux requires a reducer to return a new object.** If a reducer returns the same object, Redux will not see a change and will not update views.
 
 > [info]
 >
@@ -107,24 +93,36 @@ update views.
 
 **Your reducers must return a new copy of `state` if `state` is an Object or Array.**
 
-# Copying/Mutating an Array in Redux
+# Copying vs Mutating an Array in Redux
 
-There are few ways to copy an array. Mutating methods modify
-the original and return the same reference.
+Many array methods mutate the original array. Some methods create a copy. You'll want to use these methods in your reducers.
 
-Here are a few of things you might do with an array in Redux.
+## Copy an array
+
+Copy an array with the spread operator `...`:
+
+```JS 
+const array = [1,2,4]
+const newArray = [...array] 
+```
+
+Copy an array with `slice()`
+
+```js
+const array = [1,2,4]
+const newArray = array.slice()
+```
 
 ## Add a new item
 
-Use the spread operator
+Copy your array and add a new item with the spread operator:
 
 ```JavaScript
 // Creates a new array
 var newState = [...state, newItem];
 ```
 
-Add a new item by copying the array with `Array.slice()`
-then adding a new item.
+Add a new item by copying the array with `Array.slice()` then adding a new item.
 
 ```JavaScript
 // Creates a copy of state
@@ -149,11 +147,9 @@ If these topics are new for you, try some of these practice problems:
 
 ## Copy an object in an array
 
-Remember if you are modifying an object in an array you need to
-create a copy of that object!
+Remember if you are modifying an object in an array you need to create a copy of that object!
 
-Imagine state is an array of Objects with name and count `{name:"", count:0}`.
-You want to increase count for the object at index.
+Imagine state is an array of Objects with name and count `{name:"", count:0}`. You want to increase count for the object at index.
 
 ```JavaScript
 var newState = state.map((item, i) => {
@@ -180,13 +176,14 @@ Alright, now we're ready to define a reducer for timers.
 
 > [action]
 >
-> Create a new file: `src/reducers/timers-reducer.js` with the following code:
+> Create a new file: `src/reducers/timersReducer.js` with the following code:
 >
 ```js
 // Import all of our actions
 import { NEW_TIMER, TOGGLE_TIMER } from '../actions';
+import Timer from '../Timer'
 >
-const timerReducer = (state = [], action) => {
+const timersReducer = (state = [], action) => {
   switch (action.type) {
     case NEW_TIMER:
       // Add a new timer, return a copy of state
@@ -208,12 +205,12 @@ const timerReducer = (state = [], action) => {
   }
 }
 >
-export default timerReducer;
+export default timersReducer;
 ```
 
 # Combine and Export Reducers
 
-We need a way to easily "combine" and export our reducers we just built. Luckily Redux has a helper function called [combineReducers](https://redux.js.org/api/combinereducers) to do exactly that!
+While you have a reducer for each piece of state you need a root reducer to bring them all together. [combineReducers](https://redux.js.org/api/combinereducers) is used for this. 
 
 > [action]
 >
@@ -222,21 +219,20 @@ We need a way to easily "combine" and export our reducers we just built. Luckily
 ```js
 import { combineReducers } from 'redux';
 >
-import timerReducer from './timers-reducer';
-import selectTimerReducer from './select-timer-reducer';
+import timerReducer from './timersReducer';
+import selectedTimerReducer from './selectedTimerReducer';
 >
 export default combineReducers({
   timers: timerReducer,              // array
-  selectedTimer: selectTimerReducer, // int/number
+  selectedTimer: selectedTimerReducer, // int/number
 });
 ```
 
-Next we need to import the reducers at the top of `App.js`. You also need
-[createStore](https://redux.js.org/api/createstore) from `redux` and [Provider](https://react-redux.js.org/api/provider) from `react-redux`.
+Import the reducers at the top of `App.js`. You also need [createStore](https://redux.js.org/api/createstore) from `redux` and [Provider](https://react-redux.js.org/api/provider) from `react-redux`.
 
 > [action]
 >
-> Add the following to the top of `App.js` below the `React, { Component }` import:
+> Add the following to the top of `App.js`:
 >
 ```js
 ...
@@ -254,36 +250,23 @@ import reducers from './reducers';
 const store = createStore(reducers);
 ```
 
-Finally, we need to define the `Provider` component, which makes the Redux store available to any nested components, provided that they have been wrapped in the `connect()` function.
+Finally, define the `Provider` component, which makes the Redux store available to all nested components.
 
 > [action]
 >
-> Update your `App` class to the following in `App.js`:
+> Update your `App` component in `App.js`:
 >
 ```js
-class App extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">Welcome to React</h1>
-          </header>
-          <p className="App-intro">
-            Tmrz
-          </p>
-        </div>
-      </Provider>
-    );
-  }
+function App() {
+  return (
+    <Provider store={store}>
+      <h1>TMRZ</h1>
+    </Provider>
+  );
 }
 ```
 
-Your app should be displaying the following in your browser:
-
-![welcome](assets/welcome.png)
-
-At this stage the app is all set up to use Redux! You can build components that connect to the store and send actions.
+Your app should display the the heading: TMRZ. This doesn't look like much but you've actually done a lot laying down redux infastructure. The Actions and Reducers are ready to manage state in this application. 
 
 Building out our reducers gave us some good practice with getting **further acquainted with the Flux pattern!** And now we're ready to move on and build out our React Components!
 

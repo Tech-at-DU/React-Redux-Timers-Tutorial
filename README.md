@@ -1,6 +1,6 @@
 # Web 7 - Timers Tutorial
 
-This tutorial uses React and Redux to create a password generator and storage app. 
+This tutorial uses React and Redux to create a timer app. 
 
 This app could be build as either React or React Native. 
 

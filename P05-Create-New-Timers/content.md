@@ -56,6 +56,7 @@ import { addTimer } from '../actions'
 >
 export default function NewTimer() {
 	const [ name, setName ] = useState('')
+	const dispatch = useDispatch()
 >
 	return (
 		<div>
@@ -79,6 +80,7 @@ Let's build that out in the render function:
 ```js
 export default function NewTimer() {
 	const [ name, setName ] = useState('')
+	const dispatch = useDispatch()
 >
 	return (
 		<div>

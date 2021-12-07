@@ -1,7 +1,4 @@
----
-title: "Define Reducer"
-slug: react-redux-timers-define-reducer
----
+# Defining the Reducer
 
 ## Technical Planning
 

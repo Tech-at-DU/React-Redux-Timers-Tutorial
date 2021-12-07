@@ -1,7 +1,4 @@
----
-title: "Keeping Time"
-slug: react-redux-timers-keeping-time
----
+# Keeping Time
 
 So we have everything displaying, but the timers still aren't running. It's about time we fixed that and actually gave the start/stop buttons something to do!
 

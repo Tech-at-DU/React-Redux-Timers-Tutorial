@@ -1,7 +1,4 @@
----
-title: "Create New Timers"
-slug: react-redux-timers-create-new-timers
----
+# Creating new Timers
 
 So far we have been working on getting Redux and React up and
 running and no work has gone into components, which is the heart of React!

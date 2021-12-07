@@ -1,7 +1,4 @@
----
-title: "Timer Object"
-slug: react-redux-timers-timer-object
----
+# Timer Object
 
 ## Technical Planning
 

@@ -1,7 +1,4 @@
----
-title: "Getting Started with React and Redux"
-slug: react-redux-timers-getting-started
----
+# Getting Started
 
 The goal of this section is to install the tools you will need to complete the
 tutorial.

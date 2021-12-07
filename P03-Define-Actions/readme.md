@@ -1,7 +1,4 @@
----
-title: "React Redux Timers - Defining Actions"
-slug: react-redux-timers-defining-actions
----
+# Defining Actions
 
 ## Technical Planning
 

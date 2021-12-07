@@ -1,7 +1,4 @@
----
-title: "List Timers"
-slug: react-redux-timers-list-timers
----
+# List Timers
 
 ## Technical Planning
 

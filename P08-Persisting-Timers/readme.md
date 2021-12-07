@@ -1,7 +1,4 @@
----
-title: "Persisting Timers"
-slug: react-redux-timers-persisting-timers
----
+# Persisting Timers
 
 ## Technical Planning
 

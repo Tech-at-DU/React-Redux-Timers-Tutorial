@@ -1,7 +1,4 @@
----
-title: "Timers - Introduction"
-slug: react-redux-timers-introduction
----
+# Redux Timers Introduction
 
 The goal of the project is to create a web app that stores a list of timers.
 Timers will keep track of elapsed time. It could be used to track time for billing clients, scientific processes, or other uses. Through building this app, you will learn how to use React to manage views, and Redux to manage application state.

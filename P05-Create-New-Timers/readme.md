@@ -38,23 +38,23 @@ The first component we'll build is for creating new timers. The new timer compon
 
 Keep in mind that we won't see timers until the Timer list component is created, which will be built in the next chapter.
 
-> [action]
->
-> Create a new folder in `src` called `components`. Now within this folder, create a `NewTimer.js` file which will house our new-timer component
->
-> Fill in `/src/components/NewTimer.js` with the following starter code
->
+Create a new folder `src/components`. 
+
+Create `src/components/NewTimer.js`. This file will define the new component. 
+
+Add the followingL
+
 ```js
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
->
+
 // We need to import our action to add a new timer
-import { addTimer } from '../actions'
->
+import { addTimer } from '../features/timers/timersSlice'
+
 export default function NewTimer() {
 	const [ name, setName ] = useState('')
 	const dispatch = useDispatch()
->
+
 	return (
 		<div>
 
@@ -68,37 +68,63 @@ You now have a basic `NewTimer` component structure, but we have no idea how to 
 - A field to input a name
 - A button to save the timer
 
-Let's build that out in the render function:
+Fill in the `render` method in `NewTimer.js`, as well as adding a few other ancillary methods and an export statement:
 
-> [action]
->
-> Fill in the `render` method in `/src/components/NewTimer.js`, as well as adding a few other ancillary methods and an export statement:
->
 ```js
 export default function NewTimer() {
 	const [ name, setName ] = useState('')
 	const dispatch = useDispatch()
->
+
 	return (
 		<div>
+
 			<input
 				type='text'
 				placeholder="New Timer Name"
 				name="name"
 				value={name}
-				onChange={(e) => setName(e.target.value)}/>
+				onChange={(e) => setName(e.target.value)} />
+			
 			<button
 				onClick={() => dispatch(addTimer(name))}
 			>Save</button>
+
 		</div>
 	)
 }
 ```
 
-- UseDispatch - will give you access to the Redux store and allow your component to send actions when you need to update the store.
-- useState - is used to create a value that will be available across multiple renders of this component. 
+- `useDispatch` - Returns a reference to the dispatcher. The dispatcher allows you to send actions to the store to create changes in application state. 
+- `useState` - is used to create a value that will be available across multiple renders of this component. Notice you used the controlled component pattern in the input!
+- `dispatch(addTimer(name))` - Take a close loiok at this snippet of code. Let's break this one down. Clicking the button will add a new timer by calling the `addTimer(name)` action and passing the name as an argument. The value returned from this function call is then passed as an argument to a call to `dispatch(...new Timer...)`. This is how Redux works. To make a change to the application state, adding a new timer to the list of timers in this case, you will call one of the action functions and pass the reuslt to the dispatcher. 
 
-First React component in the bag! Great work on **building a react component using JSX syntax**, as well as getting more practice **managing application state**. But we can't stop here, let's build another component!
+## Display the New Timer Component
+
+In order to see this new component in action you'll need to import it and create an instance. 
+
+In `src/App.js` add the following: 
+
+```JS
+import React from 'react';
+import './App.css';
+import NewTimer from './components/NewTimer';
+
+function App() {
+  return (
+    <div className="App">
+      <NewTimer />
+    </div>
+  );
+}
+
+export default App;
+```
+
+With this in place you should see your new form. 
+
+Test it out. You should be able to add a new timer but keep in mind that the new timers will not visible until we make a component to display them! 
+
+Test your work and resolve any errors that appear in the console. 
 
 # Now Commit
 

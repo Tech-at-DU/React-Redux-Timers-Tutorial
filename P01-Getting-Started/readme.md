@@ -1,7 +1,6 @@
 # Getting Started
 
-The goal of this section is to install the tools you will need to complete the
-tutorial.
+The goal of this section is to install the tools you will need to complete the tutorial.
 
 # Editor
 
@@ -37,29 +36,25 @@ a command line tool: `Create React App` that will do this for you.
 ```bash
 $ npx create-react-app tmrz-app
 $ cd tmrz-app
-$ yarn start
+$ npm start
 ```
 
-**Note:** The first command above may take a few seconds to install all of file
-dependancies. The last command may take a few seconds to start the app for the first time.
+**Note:** The first command above may take a few seconds to install all of file dependancies. The last command may take a few seconds to start the app for the first time.
 
 When the the above commands are complete, a tab pointed to `localhost` should open in your browser and it should look like the below:
 
 ![react-app](assets/react-app.png)
 
-The project is now running on `localhost:3000`. This local server is
-for development.
+The project is now running on `localhost:3000`. This local server is for development.
 
-Editing files in the project should trigger the local server to update.
-In this way you can see the latest changes immediately in the browser.
+Editing files in the project should trigger the local server to update. In this way you can see the latest changes immediately in the browser.
 
 # Tour the React App source code
 
-The boilerplate project contains a few files that are arranged in
-folders:
+The boilerplate project contains a few files that are arranged in folders:
 
-- **`src`**: You'll do your work in the `src` folder. *This folder contains
-all of the React Components.*
+- **`src`**: You'll do your work in the `src` folder. *This folder contains all of the React Components.*
+
     - **All of the code you create must be stored in the 'src' folder.**
     - **`index.js`:** defines `ReactDOM.render()`. This loads and displays the `App` component. *This is the entry point for a react app. You won't need to edit this file.*
     - **`app.js`:** contains the root component for the app. At the moment this file defines everything you see when you run the default app.
@@ -84,9 +79,17 @@ Import Redux and React-Redux.
 > Run the following to import redux and react-redux:
 >
 ```bash
-$ npm i --save redux
-$ npm i --save react-redux
+$ npm install @reduxjs/toolkit
+$ npm install react-redux
 ```
+
+## Technical Planning
+
+1. Review the Project
+1. Install Tools
+1. Define an Object to hold a Timer
+1. Setup Redux Toolkit
+1. Setup Redux Provider
 
 ## Resources
 

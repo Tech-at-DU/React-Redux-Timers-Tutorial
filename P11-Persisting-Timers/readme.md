@@ -13,7 +13,7 @@
     1. Load and save state between the Store and Local Storage
     1. Throttle the save to local storage to improve performance
 
-Our timers are working, they're styled and looking fly, but they still don't quite do one thing yet: persist! If you refresh the page, or open a new tab on `localhost`, the timers disappear.
+Your timers are working, they're styled and looking fly, but they still don't quite do one thing yet: persist! If you refresh the page, or open a new tab on `localhost`, the timers disappear.
 
 In this last chapter, we'll fix that by persisting the timers with local storage.
 
@@ -35,13 +35,11 @@ First step is to define a key to be used with local storage. Next we need to def
 
 Since it's not related to a a specific component, action, or reducer, our `utils` folder feels like a good place to put this.
 
-> [action]
->
-> Add the following to the top of the `/src/utils/index.js` file:
->
+Add the following to the top of the `/src/utils/persistState.js` file:
+
 ```js
 const TMRZ_STATE = "TMRZ_STATE"
->
+
 // Load State
 export const loadState = () => {
   try {
@@ -56,7 +54,7 @@ export const loadState = () => {
     return undefined
   }
 }
->
+
 // Save State
 export const saveState = (state) => {
   try {
@@ -68,26 +66,37 @@ export const saveState = (state) => {
     console.log("Error saving data")
   }
 }
+
+```
+
+To persist state subscribe to changes from the `store` in `src/app/app.js`. Import the functions you added to `utils.persistState.js`:
+
+```js
+...
+import { loadState, saveState } from '../utils/persistState'
 ...
 ```
 
-To persist state subscribe to changes from the `store` in `App.js`. 
+Modify this block where you configured your store. Here you are loading your persisted store from local storage when the app launches. 
 
-> [action]
->
-> Import the methods from `/util` and add the following code to `App.js`. **note:** you need to replace the existing definition of `store` with the following:
->
 ```js
-import { loadState, saveState } from './utils'
->
-...
->
-const persistedState = loadState()
-const store = createStore(reducers, persistedState)
-store.subscribe(() => {
-  saveState(store.getState())
+export const store = configureStore({
+  reducer: {
+		timers: timersReducer
+	},
+	preloadedState: loadState() // 5
 })
 ```
+
+Now add this new block.
+
+```js
+store.subscribe(() => {
+	saveState(store.getState());
+})
+```
+
+This block defines a a callback that will be called when the store is updated. When a change is made to the store the callback function gets the current app state and saves it to local stoage. 
 
 # Needs More Throttle
 
@@ -95,29 +104,22 @@ In this arrangement `saveState()` is being called each time the store changes. S
 
 It might be possible to improve performance by throttling calls to `saveState()`. [Lodash](https://lodash.com/) has a throttle method we can use to help us out.
 
-> [action]
->
-> Install Lodash via npm:
->
+Install Lodash via npm:
+
 ```bash
 $ npm i --save lodash
 ```
 
 Lodash has many methods. By default we will get the whole library, but let's just import only the part that we need, in this case `throttle`.
 
-> [action]
->
-> import lodash's throttle method into `App.js`
->
+import lodash's throttle method into `App.js`
+
 ```js
 import throttle from 'lodash/throttle'
 ```
 
-Finally, let's tell our store to save state every 1000ms using Lodash's throttle method:
-> [action]
->
-> Replace the current `store.subscribe` call with the following in `App.js`:
->
+Finally, let's tell our store to save state every 1000ms using Lodash's throttle method. Replace the current `store.subscribe` call with the following in `App.js`:
+
 ```js
 store.subscribe(throttle(() => {
   saveState(store.getState())
@@ -134,8 +136,6 @@ As you go through this FEW course, try to tie the concepts you learned here into
 
 # Now Commit
 
->[action]
->
 ```bash
 $ git add .
 $ git commit -m 'persisting timers'
@@ -162,8 +162,3 @@ This app is small in scope but covers a wide range of technologies and has room 
 
 # Feedback and Review - 2 minutes
 
-**We promise this won't take longer than 2 minutes!**
-
-Please take a moment to rate your understanding of learning outcomes from this tutorial, and how we can improve it via our [tutorial feedback form](https://goo.gl/forms/uytCya0slBpsOXPf2)
-
-This allows us to get feedback on how well the students are grasping the learning outcomes, and tells us where we can improve the tutorial experience.

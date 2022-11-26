@@ -1,6 +1,6 @@
 # Web 7 - Timers Tutorial
 
-This tutorial uses React and Redux to create a timer app. 
+This tutorial uses React and Redux Toolkit to create a timer app. 
 
 The Timers app is simular to the core feature of the https://toggl.com. This project is similar Toggle Time Track. This was Toggl's first product. They have since expanded into other products. Toggl Time track is a real world product that is used by many people. 
 
@@ -25,6 +25,7 @@ The tutorial creates the project with React but you could also build this projec
 ## Version 
 
 Vesion: 1.0.1
+Vesion: 2.0.0 - Updated to Redux Toolkit
 
 This project was built and tested on ...
 
@@ -46,6 +47,4 @@ To create this project you will need an understanding of
 
 ## Instructor FAQ
 
-- bugs
-- common student problems 
-- etc. 
+-  

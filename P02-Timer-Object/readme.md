@@ -2,16 +2,11 @@
 
 ## Technical Planning
 
-1. **Build a Timer object**
-    1. Create a Timer Class
-    1. Assign name, time, and isRunning properties to the class
-1. Define the Actions of a Timer
-1. Define the Reducers of a Timer
-1. Allow users to create a Timer
-1. Allow users to see a list of Timers
-1. Users should be able to start/stop the clock on their Timers
-1. Style the app
-1. Allow Timers to persist
+1. Review the Project
+1. Install Tools
+1. Define an Object to hold a Timer
+1. Setup Redux Toolkit
+1. Setup Redux Provider
 
 ## Defining the Timer Object
 

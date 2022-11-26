@@ -2,21 +2,6 @@
 
 So we have everything displaying, but the timers still aren't running. It's about time we fixed that and actually gave the start/stop buttons something to do!
 
-## Technical Planning
-
-1. ~~Build a Timer object~~
-1. ~~Define the Actions of a Timer~~
-1. ~~Define the Reducers of a Timer~~
-1. ~~Allow users to create a Timer~~
-1. ~~Allow users to see a list of Timers~~
-1. **Users should be able to start/stop the clock on their Timers**
-    1. Learn how to properly track the delta time for each timer
-    1. Create an Update action that updates the time for a given timer
-    1. Insure your reducer knows how to properly handle your update action
-    1. Tell the store to run Update so that the view can display the accurate time
-1. Style the app
-1. Allow Timers to persist
-
 # Update Action
 
 These steps will walk through the whole Redux Toolkit ecosystem and offer some new ideas along the way! 
@@ -140,10 +125,22 @@ Stretch challenge: Format the numbers so that values below are padded with a 0.
 formatTime(157598) // 00:02:37
 ```
 
+## Technical Planning
+
+1. ~~Review Project~~
+2. ~~Create timer objects~~
+3. ~~Setup Redux Toolkit~~
+4. ~~Setup React Redux Provider~~
+5. ~~Create New Timer Component~~
+6. ~~Create List Timer Component~~
+7. ~~Create Timer View Component~~
+8. **Keeping Time**
+9. Format Time
+10. Styling the App
+11. Persisting Timers
+
 # Now Commit
 
->[action]
->
 ```bash
 $ git add .
 $ git commit -m 'timers running'

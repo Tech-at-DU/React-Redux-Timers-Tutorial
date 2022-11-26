@@ -1,21 +1,5 @@
 # List Timers
 
-## Technical Planning
-
-1. ~~Build a Timer object~~
-1. ~~Define the Actions of a Timer~~
-1. ~~Define the Reducers of a Timer~~
-1. ~~Allow users to create a Timer~~
-1. **Allow users to see a list of Timers**
-    1. Create a `list-timers` component that will house a list of timers
-    1. Create a `timer-view` component to describe what a timer looks like
-    1. Within the `timer-view`, allow for display of a name, time, and start/stop button
-    1. Start/stop button should change text when clicked for now
-    1. Display your progress so far in the browser
-1. Users should be able to start/stop the clock on their Timers
-1. Style the app
-1. Allow Timers to persist
-
 The list of timers will display all of the timers you have created. Each timer displayed in the list will need to display the following:
 
 - Name
@@ -128,10 +112,22 @@ This would be better off as it's own component! This is the challenge!
 - It should display the: name, time, and a start/stop button
 - Import this new component into the `ListTimers` component, and an instance for each timer in your list and pass the appropriate props. 
 
+## Technical Planning
+
+1. ~~Review Project~~
+2. ~~Create timer objects~~
+3. ~~Setup Redux Toolkit~~
+4. ~~Setup React Redux Provider~~
+5. ~~Create New Timer Component~~
+6. **Create List Timer Component**
+7. Create Timer View Component
+8. Keeping Time
+9. Format Time
+10. Styling the App
+11. Persisting Timers
+
 # Now Commit
 
->[action]
->
 ```bash
 $ git add .
 $ git commit -m 'added list of timers'

@@ -1,18 +1,5 @@
 # Persisting Timers
 
-## Technical Planning
-
-1. ~~Build a Timer object~~
-1. ~~Define the Actions of a Timer~~
-1. ~~Define the Reducers of a Timer~~
-1. ~~Allow users to create a Timer~~
-1. ~~Allow users to see a list of Timers~~
-1. ~~Users should be able to start/stop the clock on their Timers~~
-1. ~~Style the app~~
-1. **Allow Timers to persist**
-    1. Load and save state between the Store and Local Storage
-    1. Throttle the save to local storage to improve performance
-
 Your timers are working, they're styled and looking fly, but they still don't quite do one thing yet: persist! If you refresh the page, or open a new tab on `localhost`, the timers disappear.
 
 In this last chapter, we'll fix that by persisting the timers with local storage.
@@ -134,6 +121,20 @@ Congrats! We got some practice managing local storage in the context of **managi
 
 As you go through this FEW course, try to tie the concepts you learned here into the course material. The foundational work here on building React apps will be used to make bigger and bolder apps down the road!
 
+## Technical Planning
+
+1. ~~Review Project~~
+2. ~~Create timer objects~~
+3. ~~Setup Redux Toolkit~~
+4. ~~Setup React Redux Provider~~
+5. ~~Create New Timer Component~~
+6. ~~Create List Timer Component~~
+7. ~~Create Timer View Component~~
+8. ~~Keeping Time~~
+9. ~~Format Time~~
+10. ~~Styling the App~~
+11. **Persisting Timers**
+
 # Now Commit
 
 ```bash
@@ -159,6 +160,3 @@ This app is small in scope but covers a wide range of technologies and has room 
   - Dispatch this action from your button.
   - Handle thie action in your timersReducer. 
 - The times on all of the timers is data and reprents how much time was measured in a range of categories. You can create a new component to display this. Imagine a graph or a pie/donut chart showing the amount of time spent on each category. 
-
-# Feedback and Review - 2 minutes
-

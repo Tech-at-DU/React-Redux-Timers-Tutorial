@@ -169,4 +169,24 @@ Now go to your browser, and you should see something like the following when you
 **Creating a new timer named "foo"**
 ![new timer](assets/new-timer.png)
 
-# 
+## Technical Planning
+
+1. ~~Review Project~~
+2. ~~Create timer objects~~
+3. ~~Setup Redux Toolkit~~
+4. ~~Setup React Redux Provider~~
+5. ~~Create New Timer Component~~
+6. ~~Create List Timer Component~~
+7. ~~Create Timer View Component~~
+8. ~~Keeping Time~~
+9. ~~Format Time~~
+10. **Styling the App**
+11. Persisting Timers
+
+# Now Commit
+
+```bash
+$ git add .
+$ git commit -m 'Styled Timers'
+$ git push
+```

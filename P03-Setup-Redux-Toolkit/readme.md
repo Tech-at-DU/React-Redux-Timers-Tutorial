@@ -4,6 +4,20 @@ In this step you will setup Redux Toolkit. Along the way you'll create some fold
 
 You'll also create a file to manage a "slice" of your application state. Application state is stored in the the "store". The store is an object with many keys. The data store at one of these keys is a slice. This application will have a single slice "timers" that stores an array of the Timer objects you created in the last step. 
 
+## Technical Planning
+
+1. ~~Review Project~~
+2. ~~Create timer objects~~
+3. **Setup Redux Toolkit**
+4. Setup React Redux Provider
+5. Create New Timer Component
+6. Create List Timer Component
+7. Create Timer View Component
+8. Keeping Time
+9. Format Time
+10. Styling the App
+11. Persisting Timers
+
 ## Organize your code
 
 Make a new folder: `src/features`
@@ -105,14 +119,6 @@ export const { addTimer, toggleTimer } = timersSlice.actions
 ## Wrapping up this section
 
 There is nothing that will be visible in the app so far. You need to write some more code to make use of what you have done here. Your code should compile without errors. 
-
-## Technical Planning
-
-1. Review the Project
-1. Install Tools
-1. Define an Object to hold a Timer
-1. Setup Redux Toolkit
-1. Setup Redux Provider
 
 # Now Commit
 

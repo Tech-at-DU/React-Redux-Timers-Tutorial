@@ -1,12 +1,20 @@
 # Timer Object
 
+This 
+
 ## Technical Planning
 
-1. Review the Project
-1. Install Tools
-1. Define an Object to hold a Timer
-1. Setup Redux Toolkit
-1. Setup Redux Provider
+1. ~~Review Project~~
+2. **Create timer objects**
+3. Setup Redux Toolkit
+4. Setup React Redux Provider
+5. Create New Timer Component
+6. Create List Timer Component
+7. Create Timer View Component
+8. Keeping Time
+9. Format Time
+10. Styling the App
+11. Persisting Timers
 
 ## Defining the Timer Object
 
@@ -25,27 +33,22 @@ JavaScript only has one `Object` type. It has many ways to create objects. For t
 You can define a class using the `class` keyword. *Class names by convention
 always start with an uppercase letter.* You can initialize the properties of a class in it's constructor function.
 
-> [action]
->
-> In your `src` folder, create a `Timer.js` file and write the `Timer` class with the following properties:
+In your `src` folder, create a `Timer.js`. Write a function that creates Timer objects. A timer object is a JS object with properties: name, time, and isRunning. The createTimer function receives the name as a parameter and sets default values for time and isRunning.
 >
 ```js
-class Timer {
-  // The name property is passed into the constructor and the class is initialized.
-  constructor(name) {
-    this.name = name;
-    this.time = 0;
-    this.isRunning = false;
+export default function createTimer(name) {
+  return {
+    name, 
+    time: 0, 
+    isRunning: false
   }
 }
-
-export default Timer;
 ```
 
 Below is an example on how to create an instance of `Timer`:
 
 ```js
-var myTimer = new Timer('Workout');
+const myTimer = createTimer('Workout');
 ```
 
 Great work, this is just the beginning of **defining class objects to utilize in an OOP paradigm!** We'll build upon this throughout the tutorial.
@@ -56,8 +59,6 @@ Great work, this is just the beginning of **defining class objects to utilize in
 
 # Now Commit
 
->[action]
->
 ```bash
 $ git add .
 $ git commit -m 'added Timer class'

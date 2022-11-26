@@ -37,10 +37,22 @@ Your timers should now look like something like the following:
 
 Alright! We've successfully **used timing methods and objects in JavaScript to accurately track time!** And because of it, our timers now work! This is great! They still look a little ugly though, let's spruce them up a bit.
 
+## Technical Planning
+
+1. ~~Review Project~~
+2. ~~Create timer objects~~
+3. ~~Setup Redux Toolkit~~
+4. ~~Setup React Redux Provider~~
+5. ~~Create New Timer Component~~
+6. ~~Create List Timer Component~~
+7. ~~Create Timer View Component~~
+8. ~~Keeping Time~~
+9. **Format Time**
+10. Styling the App
+11. Persisting Timers
+
 # Now Commit
 
->[action]
->
 ```bash
 $ git add .
 $ git commit -m 'timer format'

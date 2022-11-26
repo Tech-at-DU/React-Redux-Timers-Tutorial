@@ -85,11 +85,17 @@ $ npm install react-redux
 
 ## Technical Planning
 
-1. Review the Project
-1. Install Tools
-1. Define an Object to hold a Timer
-1. Setup Redux Toolkit
-1. Setup Redux Provider
+1. ~~Review Project~~
+2. Create timer objects
+3. Setup Redux Toolkit
+4. Setup React Redux Provider
+5. Create New Timer Component
+6. Create List Timer Component
+7. Create Timer View Component
+8. Keeping Time
+9. Format Time
+10. Styling the App
+11. Persisting Timers
 
 ## Resources
 

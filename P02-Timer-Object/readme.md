@@ -1,21 +1,5 @@
 # Timer Object
 
-This 
-
-## Technical Planning
-
-1. ~~Review Project~~
-2. **Create timer objects**
-3. Setup Redux Toolkit
-4. Setup React Redux Provider
-5. Create New Timer Component
-6. Create List Timer Component
-7. Create Timer View Component
-8. Keeping Time
-9. Format Time
-10. Styling the App
-11. Persisting Timers
-
 ## Defining the Timer Object
 
 The app will create and store Objects that define a timer. Timer objects will have the following properties that will define it:
@@ -52,6 +36,21 @@ const myTimer = createTimer('Workout');
 ```
 
 Great work, this is just the beginning of **defining class objects to utilize in an OOP paradigm!** We'll build upon this throughout the tutorial.
+
+## Technical Planning
+
+1. ~~Review Project~~
+2. **Create timer objects**
+3. Setup Redux Toolkit
+4. Setup React Redux Provider
+5. Create New Timer Component
+6. Create List Timer Component
+7. Create Timer View Component
+8. Keeping Time
+9. Format Time
+10. Styling the App
+11. Persisting Timers
+12. Stretch Goals
 
 ## Resources
 

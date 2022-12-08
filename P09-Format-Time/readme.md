@@ -50,6 +50,7 @@ Alright! We've successfully **used timing methods and objects in JavaScript to a
 9. **Format Time**
 10. Styling the App
 11. Persisting Timers
+12. Stretch Goals
 
 # Now Commit
 

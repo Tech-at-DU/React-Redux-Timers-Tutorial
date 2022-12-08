@@ -69,6 +69,7 @@ So far nothing visual and amazing will happen but your app should compile and ru
 9. Format Time
 10. Styling the App
 11. Persisting Timers
+12. Stretch Goals
 
 # Now Commit
 

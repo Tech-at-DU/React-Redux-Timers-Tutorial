@@ -34,7 +34,7 @@ By the end of this tutorial, you should be able to...
 
 ## Technical Planning
 
-1. **Review Project**
+1. **Introduction**
 2. Create timer objects
 3. Setup Redux Toolkit
 4. Setup React Redux Provider
@@ -45,6 +45,7 @@ By the end of this tutorial, you should be able to...
 9. Format Time
 10. Styling the App
 11. Persisting Timers
+12. Stretch Goals
 
 # Using Git/GitHub
 
@@ -54,9 +55,6 @@ Much like we've done in earlier tutorials, make sure you're committing your code
 
 Set up your repo!
 
->[action]
-> Make your first commit
->
 ```bash
 $ git init
 $ git add .
@@ -65,9 +63,6 @@ $ git commit -m 'project init'
 
 Now go to GitHub and create a public repository, and now associate it as a remote for your local git project and then push to it.
 
->[action]
-> Push it!
->
 ```bash
 $ git remote add origin GITHUB-REPO-URL
 $ git push origin main -u

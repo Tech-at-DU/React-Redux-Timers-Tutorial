@@ -10,6 +10,22 @@ The is built from React and Redux. It uses React to display it's UI and and Redu
 
 The tutorial creates the project with React but you could also build this project with React Native making changes along the way. 
 
+## Prerequisites
+
+To create this project you will need an understanding of 
+
+- JavaScript: ES6
+- React
+  - Creating components 
+  - JSX
+- HTML/CSS
+
+## Objectives 
+
+- Create a React Application
+- Use Redux Toolkit
+- Define application state
+
 ## Tutorial Steps 
 
 - [Introduction](P00-Introduction)
@@ -24,6 +40,7 @@ The tutorial creates the project with React but you could also build this projec
 - [Format Time](P09-Format-Time)
 - [Adding Styles](P10-Adding-Styles)
 - [Persisting Timers](P11-Persisting-Timers)
+- [Stretch Goals](P12-Stretch-Goals)
 
 ## Version 
 
@@ -31,22 +48,6 @@ Vesion: 1.0.1
 Vesion: 2.0.0 - Updated to Redux Toolkit
 
 This project was built and tested on ...
-
-## Prerequisites
-
-To create this project you will need an understanding of 
-
-- JavaScript: ES6
-- React
-  - Creating components 
-  - JSX
-- HTML/CSS
-
-## Objectives 
-
-- Define Application state
-- Create an app that manages application state with Redux
-- Implement React-Redux
 
 ## Instructor FAQ
 

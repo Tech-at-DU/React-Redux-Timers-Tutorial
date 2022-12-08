@@ -15,12 +15,15 @@ The tutorial creates the project with React but you could also build this projec
 - [Introduction](P00-Introduction)
 - [Getting Started](P01-Getting-Started)
 - [Timer Object](P02-Timer-Object)
-- [Define Actions](P03-Define-Actions)
-- [Define Reducer](P04-Define-Reducer)
+- [Setup Redux Toolkit](P03-Setup-Redux-Toolkit)
+- [Setupn Provider](P04-Setup-Provider)
 - [Create New Timers](P05-Create-New-Timers)
 - [List Timers](P06-List-Timers)
-- [Keeping Time](P07-Keeping-Time)
-- [Persisting Timers](P08-Persisting-Timers)
+- [Timer View](P07-Timer-View)
+- [Keeping Time](P08-Keeping-Time)
+- [Format Time](P09-Format-Time)
+- [Adding Styles](P10-Adding-Styles)
+- [Persisting Timers](P11-Persisting-Timers)
 
 ## Version 
 

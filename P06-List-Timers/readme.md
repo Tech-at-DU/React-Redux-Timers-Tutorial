@@ -36,7 +36,7 @@ Add the following:
 
 ```JS
 export default function ListTimers() {
-	const timers = useSelector(state => state.timers)
+	const timers = useSelector(state => state.timers.value)
 	...
 ```
 

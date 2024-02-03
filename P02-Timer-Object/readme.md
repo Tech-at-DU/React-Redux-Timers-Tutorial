@@ -12,30 +12,29 @@ You can add more properties to expand the functionality of the app. For example 
 
 JavaScript only has one `Object` type. It has many ways to create objects. For this tutorial we will be using the class syntax. This will follow the same coding style used for creating React components.
 
-# Creating Classes
+# Creating Timer Objects
 
-You can define a class using the `class` keyword. *Class names by convention
-always start with an uppercase letter.* You can initialize the properties of a class in it's constructor function.
-
-In your `src` folder, create a `Timer.js`. Write a function that creates Timer objects. A timer object is a JS object with properties: name, time, and isRunning. The createTimer function receives the name as a parameter and sets default values for time and isRunning.
+In your `src` folder, create a `Timer.js`. Write a function that creates Timer objects. A timer object is a JS object with properties: `name`, `time`, and `isRunning`. The createTimer function receives the name as a parameter and sets default values for time and isRunning.
 >
 ```js
-export default function createTimer(name) {
-  return {
-    name, 
-    time: 0, 
-    isRunning: false
+Class Timer {
+  constructor(name) {
+    thjis.name = name 
+    this.time = 0 
+    this.isRunning =false
   }
 }
+
+export default Class
 ```
 
 Below is an example on how to create an instance of `Timer`:
 
 ```js
-const myTimer = createTimer('Workout');
+const myTimer = new Timer('Workout');
 ```
 
-Great work, this is just the beginning of **defining class objects to utilize in an OOP paradigm!** We'll build upon this throughout the tutorial.
+Great work, this is just the beginning!
 
 ## Technical Planning
 

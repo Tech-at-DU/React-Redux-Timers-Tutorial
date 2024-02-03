@@ -22,11 +22,11 @@ The first component we'll build is for creating new timers. The new timer compon
 
 Keep in mind that we won't see timers until the Timer list component is created, which will be built in the next chapter.
 
-Create a new folder `src/components`. 
+Create a new folder `src/components`.
 
 Create `src/components/NewTimer.js`. This file will define the new component. 
 
-Add the followingL
+Add the following:
 
 ```js
 import React, { useState } from 'react'
@@ -56,8 +56,8 @@ Fill in the `render` method in `NewTimer.js`, as well as adding a few other anci
 
 ```js
 export default function NewTimer() {
-	const [ name, setName ] = useState('')
-	const dispatch = useDispatch()
+	const [ name, setName ] = useState('') // 2.
+	const dispatch = useDispatch() // 1.
 
 	return (
 		<div>
@@ -70,7 +70,7 @@ export default function NewTimer() {
 				onChange={(e) => setName(e.target.value)} />
 			
 			<button
-				onClick={() => dispatch(addTimer(name))}
+				onClick={() => dispatch(addTimer(name))} // 3.
 			>Save</button>
 
 		</div>
@@ -78,9 +78,9 @@ export default function NewTimer() {
 }
 ```
 
-- `useDispatch` - Returns a reference to the dispatcher. The dispatcher allows you to send actions to the store to create changes in application state. 
-- `useState` - is used to create a value that will be available across multiple renders of this component. Notice you used the controlled component pattern in the input!
-- `dispatch(addTimer(name))` - Take a close loiok at this snippet of code. Let's break this one down. Clicking the button will add a new timer by calling the `addTimer(name)` action and passing the name as an argument. The value returned from this function call is then passed as an argument to a call to `dispatch(...new Timer...)`. This is how Redux works. To make a change to the application state, adding a new timer to the list of timers in this case, you will call one of the action functions and pass the reuslt to the dispatcher. 
+1. `useDispatch` - Returns a reference to the dispatcher. The dispatcher allows you to send actions to the store to create changes in application state. 
+2. `useState` - is used to create a value that will be available across multiple renders of this component. Notice you used the controlled component pattern in the input!
+3. `dispatch(addTimer(name))` - Take a close look at this snippet of code. Let's break this one down. Clicking the button will add a new timer by calling the `addTimer(name)`. This generates an action and `name` will be the payload. Find `addTimer`, `action` and `payload` in `timersSlice.js`.
 
 ## Display the New Timer Component
 

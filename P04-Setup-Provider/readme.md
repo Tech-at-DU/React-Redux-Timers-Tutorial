@@ -1,6 +1,6 @@
 # Setup Provider
 
-One of the best features of using Redux is the ability to access your application state from any component. Making that happen requires a little work. The Provider component does this. 
+One of the best features of using Redux is the ability to access your application state from any component. Making that happen requires the Provider component. Set this up now. 
 
 ## Setup provider
 
@@ -25,7 +25,7 @@ Here you imported `createStore` from Redux toolkit and your reducers from your `
 
 Now that the store is defined you need to initialize it and use the provider component to share the store with your entire app. 
 
-The `timersReducer` is responsible for managing the list of timers, and the list of timers is accessed from the key `timers` on state. 
+The `timersReducer` is responsible for managing the list of timers, and the list of timers is accessed from the key `timers` on state. Think of this as a "slice" of state. 
 
 Edit: `src/index.js`. Import some dependencies:
 
@@ -34,7 +34,7 @@ import { store } from './app/app';
 import { Provider } from 'react-redux';
 ```
 
-Next wrap your `<App />` component in the Provider component.
+Next wrap your `<App />` component in the Provider component and set the `store` prop to your store.
 
 ```JS
 ...
@@ -50,7 +50,7 @@ root.render(
 ...
 ```
 
-Provider needs to be the parent of App, this allows it to pass the store down to it's children and descendents. 
+Provider needs to be the parent of App, this allows it to pass the store down to it's descendents. 
 
 ## Testing your App
 

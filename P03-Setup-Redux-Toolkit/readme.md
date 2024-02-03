@@ -2,13 +2,15 @@
 
 In this step you will setup Redux Toolkit. Along the way you'll create some folders to organize your code. 
 
-You'll also create a file to manage a "slice" of your application state. Application state is stored in the the "store". The store is an object with many keys. The data store at one of these keys is a slice. This application will have a single slice "timers" that stores an array of the Timer objects you created in the last step. 
+You'll also create a file to manage a "slice" of your application state.
+
+Application state is stored in the the "store". The store is an object with many keys. The data stores at each of these keys is a slice. This application will have a single slice "timers" that stores an array of the Timer objects you created in the last step. 
 
 ## Organize your code
 
 Make a new folder: `src/features`
 
-You'll store your helper files here. 
+You'll store some helper files here. 
 
 Create a new folder: `src/features/timers`.
 
@@ -18,7 +20,7 @@ Move `Timer.js` into: `src/features/timers`
 
 Redux Toolkit organizes your application data in slices. You'll define each "slice" in a file. 
 
-For this project you'll store a list of timers. This will be the Timers Slice! 
+For this project you'll store a list of timers. This list will be the Timers Slice! 
 
 Add a new file `src/features/timers/timersSlice.js`
 
@@ -29,13 +31,13 @@ import { createSlice } from '@reduxjs/toolkit'
 import Timer from './Timer'
 
 const initialState = {
-  value: []
+  value: [] // 1.0
 }
 
 export const timersSlice = createSlice({
-  name: 'timers',
-  initialState,
-  reducers: {
+  name: 'timers', // 2.0
+  initialState, // 1.1
+  reducers: { // 3.0
     
   },
 })
@@ -46,17 +48,15 @@ export const {  } = timersSlice.actions
 export default timersSlice.reducer
 ```
 
-What you are going to do is create an array of Timer objects that is managed by Redux. 
-
-You will be able to add new timers to the list, start and stop timers in the list, and delete timers from the list. 
+What you are going to do is create an array of Timer objects that is managed by Redux. You will be able to add new timers to the list, start and stop timers in the list, and delete timers from the list. 
 
 This "slice" that you have defined here will be responsible for managing these things. 
 
-`initialState` defines the value stored as an empty array. 
+`initialState` defines the value stored as an empty array. (1.0, 1.1)
 
-The name of this "slice" of state is "timers".
+The name of this "slice" of state is "timers". (2.0)
 
-Reducers are how state is modified. Currently your reducers are empty. 
+Reducers are how state is modified. Currently your reducers are empty. (3.0)
 
 Add two actions to the reducer: 
 
@@ -82,11 +82,11 @@ export const timersSlice = createSlice({
 ...
 ```
 
-The first action `addTimer` adds a new timer to the timers array. An action is a function that takes state and an action. You can see that state defined in initialState is an array, so the state parameter of this function is that array. 
+The first action `addTimer` adds a new timer to the timers array. An action is a function that define `state` and an `action` as parameters. You can see that state defined in `initialState` is an array, so the `state` parameter of this function is that array. 
 
 This function creates a new timer and pushes it into the array. 
 
-The payload will contain the name of the new timer. This is a required parameter for creating a new timer!
+The `payload` will contain the name of the new timer. Remember `createTime` needs a name. 
 
 The `toggleTimer` function has the job of changing/toggling the state of a timer's `isRunning` property. 
 
@@ -101,6 +101,8 @@ export const { addTimer, toggleTimer } = timersSlice.actions
 
 ...
 ```
+
+**Redux state cna only be changed from an action!** That's why Redux is called a "predictable state container". The only way to change the taimers is list is by using the `addTimer` or `toggleTimer` actions. And these are the only changes that can be made! If you want to make other changes, like removing a timer, you would need to define a new action here! 
 
 ## Wrapping up this section
 

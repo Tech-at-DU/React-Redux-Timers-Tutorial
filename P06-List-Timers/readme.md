@@ -28,7 +28,7 @@ export default function ListTimers() {
 }
 ```
 
-This base for the component imports `useSelector` from `react-redux`. This function is used to get your application state from the Redux store. 
+This component imports `useSelector` from `react-redux`. This function/hook is used to get your application state from the Redux store. 
 
 ## Accessing Application state
 
@@ -36,13 +36,27 @@ Add the following:
 
 ```JS
 export default function ListTimers() {
-	const timers = useSelector(state => state.timers)
+	const timers = useSelector(state => state.timers.value)
 	...
 ```
 
-Here is how you'll use use selector to get the list of timers from your Redux store. `useSelector()` takes a function as an argument: `useSelector(() => {})` and this function takes state as a parameter and returns the piece/slice of state you are interested in: `useSelector(state => state.timers)`. In this example you are returning the `timers` slice. 
+Here is how you'll use `useSelector` to get the list of timers from your Redux store. `useSelector()` takes a function as an argument: 
+
+```js
+useSelector(() => {})
+```
+
+This function receives state as a parameter and returns the piece/slice of state you are interested in: 
+
+```js
+useSelector(state => state.timers.value)
+```
+
+In this example you are returning the `timers` slice. 
 
 ## Display a list of timers
+
+Remember that the `timers` slice is an array of `Timer` objects. 
 
 Add the following: 
 

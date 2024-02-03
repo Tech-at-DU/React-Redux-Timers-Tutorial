@@ -1,10 +1,10 @@
 # Keeping Time
 
-So we have everything displaying, but the timers still aren't running. It's about time we fixed that and actually gave the start/stop buttons something to do!
+So far you have everything displaying, but the timers still aren't running. It's about time we fixed that and actually gave the start/stop buttons something to do!
 
 # Update Action
 
-These steps will walk through the whole Redux Toolkit ecosystem and offer some new ideas along the way! 
+These steps will walk through the whole Redux Toolkit ecosystem and offer some new ideas along the way!
 
 Get started by adding a new action to your Timers Slice. Edit: `src/features/timers/timersSlice.js`:
 
@@ -25,7 +25,7 @@ Get started by adding a new action to your Timers Slice. Edit: `src/features/tim
   ...
 ```
 
-Here you added a new action "update" and reducer function. This function loops over all of the timers in the list (`state.value`) and updates the time of each timer whose `isRunning` iis true. The amount added to the time is from the payload. You'll be supplying this in a future step. Imagine that this is the amount of time that has passed since the last update. 
+Here you added a new action "update" and reducer function. This function loops over all of the timers in the list (`state.value`) and updates the time of each timer whose `isRunning` is true. The amount added to the time is from the payload. You'll be supplying this in a future step. Imagine that this is the amount of time that has passed since the last update. 
 
 Export the `update` action at the bottom: 
 
@@ -69,7 +69,7 @@ The callback function does these things:
 - Sets the last `lastUpdateTime` to now
 - Dispatches an `update` action with the `store.dispatcher()`
 
-What you have done here is setup an action that will be dispatched every 500ms (half second)
+What you have done here is setup an action that will be dispatched every 500ms (half second).
 
 ## Test your work
 

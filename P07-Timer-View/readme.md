@@ -148,7 +148,7 @@ This is great but we need to change data in our application state when the butto
 
 To do this you need to use the dispatcher to send an action to the redux store. Just like adding a timer, like you did previously. This time the action will be the `toggleTimer` action. 
 
-Edit `TimerLidstItem.js`. Import `useDispatch` and `toggleTimer` at the top: 
+Edit `TimerView.js`. Import `useDispatch` and `toggleTimer` at the top: 
 
 ```JS
 ...

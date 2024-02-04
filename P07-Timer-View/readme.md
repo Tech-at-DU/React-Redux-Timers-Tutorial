@@ -12,7 +12,7 @@ Add the following:
 import React from "react";
 
 export default function TimerView({ timer }) {
-	return (
+  return (
 		<div>
 			<h2>{timer.name}</h2>
 			<h1>{timer.time}</h1>

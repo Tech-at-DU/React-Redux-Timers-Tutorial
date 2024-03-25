@@ -4,7 +4,7 @@ If you solved the challenge in the last tutorial step you can compare your work 
 
 ## TimerView
 
-Make a new file: `src/TimerView.js`. 
+Make a new file: `src/components/TimerView.js`. 
 
 Add the following: 
 

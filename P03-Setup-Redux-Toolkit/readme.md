@@ -28,7 +28,7 @@ Add the following code:
 
 ```JS
 import { createSlice } from '@reduxjs/toolkit'
-import Timer from './Timer'
+import makeTimer from './Timer'
 
 const initialState = {
   value: [] // 1.0
@@ -69,13 +69,12 @@ export const timersSlice = createSlice({
   reducers: {
 
     addTimer: (state, action) => {
-      state.value.push(new Timer(action.payload))
+      state.value.push(makeTimer(action.payload))
     },
 
-		toggleTimer: (state, action) => {
-			state.value[action.payload].isRunning = !state.value[action.payload].isRunning
-		},
-		
+    toggleTimer: (state, action) => {
+       state.value[action.payload].isRunning = !state.value[action.payload].isRunning
+    },	
   },
 })
 

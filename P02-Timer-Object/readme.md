@@ -17,21 +17,21 @@ JavaScript only has one `Object` type. It has many ways to create objects. For t
 In your `src` folder, create a `Timer.js`. Write a function that creates Timer objects. A timer object is a JS object with properties: `name`, `time`, and `isRunning`. The createTimer function receives the name as a parameter and sets default values for time and isRunning.
 >
 ```js
-class Timer {
-  constructor(name) {
-    this.name = name 
-    this.time = 0 
-    this.isRunning =false
+const makeTimer = (name) => {
+  return {
+    name,
+    time: 0, 
+    isRunning: false
   }
-}
+} 
 
-export default Timer
+export default makeTimer
 ```
 
-Below is an example on how to create an instance of `Timer`:
+Below is an example on how to create a new timer object:
 
 ```js
-const myTimer = new Timer('Workout');
+const myTimer = makeTimer('Workout');
 ```
 
 Great work, this is just the beginning!

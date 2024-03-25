@@ -19,13 +19,13 @@ In your `src` folder, create a `Timer.js`. Write a function that creates Timer o
 ```js
 class Timer {
   constructor(name) {
-    thjis.name = name 
+    this.name = name 
     this.time = 0 
     this.isRunning =false
   }
 }
 
-export default Class
+export default Timer
 ```
 
 Below is an example on how to create an instance of `Timer`:

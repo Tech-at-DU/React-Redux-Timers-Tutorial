@@ -12,7 +12,7 @@ Add the following:
 
 ```JS
 import { configureStore } from "@reduxjs/toolkit";
-import timersReducer from '../features/Timers/timersSlice'
+import timersReducer from '../features/timers/timersSlice'
 
 export const store = configureStore({
 	reducer: {

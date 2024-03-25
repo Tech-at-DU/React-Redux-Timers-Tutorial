@@ -6,7 +6,7 @@ One of the best features of using Redux is the ability to access your applicatio
 
 Make a new folder: `src/app`
 
-Add a new file: `arc/app/app.js`
+Add a new file: `src/app/app.js`
 
 Add the following: 
 

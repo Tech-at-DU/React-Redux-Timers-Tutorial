@@ -81,7 +81,7 @@ The increment will not be perfect because timers are not perfect. It might show:
 
 You should be able to start and stop each timer. When timer is running the time should increase. When it's stopped the time should hold on it's previous time. 
 
-## Displaying human readbale time
+## Displaying human readable time
 
 The time is currently shown in milliseconds. This is great for computers but humans like to read: hrs:mins:secs. 
 

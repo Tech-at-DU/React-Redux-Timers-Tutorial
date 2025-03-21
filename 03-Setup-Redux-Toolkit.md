@@ -115,5 +115,5 @@ root.render(
 ---
 
 ## ➡️ Next Step
-In [P04 – Setup Redux Provider](../P04-Setup-Provider/readme.md), we’ll connect our UI to Redux using hooks like `useSelector` and `useDispatch`. Let’s go!
+In [P04 – Setup Redux Provider](04-Setup-Redux-Provider-and-Connecting-UI.md), we’ll connect our UI to Redux using hooks like `useSelector` and `useDispatch`. Let’s go!
 

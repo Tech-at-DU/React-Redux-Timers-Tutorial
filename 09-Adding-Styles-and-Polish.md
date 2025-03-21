@@ -110,4 +110,4 @@ Want to support mobile screens? Add this to `App.css`:
 ---
 
 ## ➡️ Next Step
-You’ve built a solid, styled app! In [P10 – Stretch Goals](../P10-Stretch-Goals/readme.md), we’ll explore advanced features to take your timer app even further!
+You’ve built a solid, styled app! In [P10 – Stretch Goals](10-Stretch-Goals.md), we’ll explore advanced features to take your timer app even further!

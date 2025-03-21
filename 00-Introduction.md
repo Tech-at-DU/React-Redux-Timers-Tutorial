@@ -63,6 +63,6 @@ Use AI to explore, debug, and get code reviews as you go!
 ---
 
 ## 🚀 Let’s Go!
-When you’re ready, continue to **[P01 - Getting Started](../P01-Getting-Started/readme.md)** and set up your React project.
+When you’re ready, continue to **[P01 - Getting Started](01-Getting-Started.md)** and set up your React project.
 
 This is going to be fun. Let’s build something awesome! 🎉

@@ -92,5 +92,5 @@ Pick 2–3 of the above and implement them! These stretch goals give you:
 ---
 
 ## ➡️ Next Step
-In [P11 – Final Thoughts](../P11-Final-Thoughts/readme.md), we’ll wrap up the project and look ahead to what you can build next!
+In [P11 – Final Thoughts](11-Final-Thoughts.md), we’ll wrap up the project and look ahead to what you can build next!
 

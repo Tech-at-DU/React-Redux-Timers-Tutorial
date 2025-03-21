@@ -84,4 +84,4 @@ resumeTimer: (state, action) => {
 ---
 
 ## ➡️ Next Step
-In [P09 – Format Time](../P09-Format-Time/readme.md), we’ll refine display logic and give the UI some polish!
+In [P09 – Format Time](09-Adding-Styles-and-Polish.md), we’ll refine display logic and give the UI some polish!

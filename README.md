@@ -42,6 +42,6 @@ Throughout this tutorial you'll find:
 ---
 
 ## 🚀 Ready to Start?
-Begin with [P00 - Introduction](P00-Introduction/readme.md) and follow each step at your own pace. You can build the entire app or skip around based on what you need to practice.
+Begin with [P00 - Introduction](00-Introduction.md) and follow each step at your own pace. You can build the entire app or skip around based on what you need to practice.
 
 Happy coding! 🎉

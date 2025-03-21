@@ -85,5 +85,5 @@ Run the app and:
 ---
 
 ## ➡️ Next Step
-In [P07 – Timer View](../P07-Timer-View/readme.md), we’ll focus on improving formatting, displaying time in a more readable format like `01:32:04`. Let’s go!
+In [P07 – Timer View](07-Timer-View-and-Formatting.md), we’ll focus on improving formatting, displaying time in a more readable format like `01:32:04`. Let’s go!
 

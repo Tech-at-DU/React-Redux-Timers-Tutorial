@@ -87,4 +87,4 @@ export default App;
 ---
 
 ## ➡️ Next Step
-In [P05 – Create New Timers](../P05-Create-New-Timers/readme.md), you’ll break out the **individual timer** into its own component and build controls to pause/resume/reset each timer!
+In [P05 – Create New Timers](05-Create-New-Timers.md), you’ll break out the **individual timer** into its own component and build controls to pause/resume/reset each timer!

@@ -100,7 +100,7 @@ Try these to solidify your setup:
 ---
 
 ## 🎉 Next Step
-Now that your environment is ready, we’ll define the **Timer data structure** in [P02 – Timer Object](../P02-Timer-Object/readme.md).
+Now that your environment is ready, we’ll define the **Timer data structure** in [P02 – Timer Object](02-Timer-Object.md).
 
 Let’s start building!
 

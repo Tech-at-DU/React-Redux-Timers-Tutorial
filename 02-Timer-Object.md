@@ -72,5 +72,5 @@ You should now have a utility that generates timer objects. We’ll add this int
 ---
 
 ## ➡️ Next Step
-Continue to [P03 – Setup Redux Toolkit](../P03-Setup-Redux-Toolkit/readme.md) to add Redux state for your timers!
+Continue to [P03 – Setup Redux Toolkit](03-Setup-Redux-Toolkit.md) to add Redux state for your timers!
 

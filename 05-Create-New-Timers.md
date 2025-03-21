@@ -98,4 +98,4 @@ export default TimerBoard;
 ---
 
 ## ➡️ Next Step
-Now let’s make the timers actually **tick every second** using `setInterval`. Continue to [P06 – List Timers](../P06-List-Timers/readme.md).
+Now let’s make the timers actually **tick every second** using `setInterval`. Continue to [P06 – List Timers](06-List-Timers-and-Real-Time-Updates.md).

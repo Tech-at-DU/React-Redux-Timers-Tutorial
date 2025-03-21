@@ -71,5 +71,5 @@ You can add a `title` attribute so users can hover for the raw millisecond value
 ---
 
 ## ➡️ Next Step
-In [P08 – Keeping Time](../P08-Keeping-Time/readme.md), we’ll make our timers even more robust and explore how to keep time precisely across pauses and refreshes!
+In [P08 – Keeping Time](08-Keeping-Time-Reliably.md), we’ll make our timers even more robust and explore how to keep time precisely across pauses and refreshes!
 

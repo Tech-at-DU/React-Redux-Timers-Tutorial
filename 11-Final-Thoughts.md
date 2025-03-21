@@ -69,4 +69,3 @@ If you enjoyed this project—share it, build on it, and keep experimenting. �
 🚀 The next great app you build starts here.
 
 **Happy Coding!** 👨‍💻👩‍💻
-

@@ -20,6 +20,8 @@ npm start
 
 📌 This creates a new React project called `timer-app`, moves into the directory, and starts the development server.
 
+💡 Note! You can use another React starter project, like Vite if you like. Everything should work, though some names may differ. 
+
 ✅ **Checkpoint**: You should see the default React welcome screen in your browser.
 
 ---
@@ -56,13 +58,12 @@ src/
 
 ✅ This separation keeps your UI and logic modular and easier to scale.
 
+💡 Note! You may have started with another React starter project and the files and structure may differ. Don't worry about that. 
+
 ---
 
-## 4️⃣ Clean Up Starter Files
-
-Before writing custom code, clean out the boilerplate files:
-- Delete `App.css`, `logo.svg`, `reportWebVitals.js`, `setupTests.js`
-- Replace `App.js` and `index.js` with simplified versions
+## 4️⃣ App.js
+Start by adding a title to the App component. 
 
 ### App.js
 ```jsx

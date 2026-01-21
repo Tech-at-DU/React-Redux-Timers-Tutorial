@@ -13,7 +13,7 @@ Let’s kick off your timer app by setting up the React project and installing t
 Make sure you have **Node.js** and **npm** installed.
 
 ```bash
-npx create-react-app timer-app
+npm create vite@latest
 cd timer-app
 npm start
 ```
